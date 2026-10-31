@@ -1,11 +1,11 @@
-// Locket 60s by anhtuaan08
+// Locket 60s by lvn
 (function(){
   // ===== HARD-CODED CAPTIONS =====
   // Mỗi caption: { text, backgroundType:'image', imageUrl, textColor, colors:[c1,c2], captionMinChars? }
   var CUSTOM_CAPTIONS = [
     {
-      overlay_id: "caption:anhtuaan08_personal",       // index 0
-      text: "👑Locket 60s by anhtuaan08",
+      overlay_id: "caption:lvn_personal",       // index 0
+      text: "👑Locket 60s by lvn",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
@@ -14,7 +14,7 @@
 
        
         ,{
-      overlay_id: "caption:anhtuaan08_personal:1",
+      overlay_id: "caption:lvn_personal:1",
       text: "Anh iu vợ",
       textColor: "#000000",
       colors: ["#FFAFCC","#FFC8DD","#CDB4DB"],
@@ -22,7 +22,7 @@
       captionMinChars: 0
     }
         ,{
-      overlay_id: "caption:anhtuaan08_personal:2",
+      overlay_id: "caption:lvn_personal:2",
       text: "Anh iu vợ",
       textColor: "#000000",
       colors: ["#FFAFCC","#FFC8DD","#CDB4DB"],
@@ -30,7 +30,7 @@
       captionMinChars: 0
     }
         ,{
-      overlay_id: "caption:anhtuaan08_personal:3",
+      overlay_id: "caption:lvn_personal:3",
       text: "Anh iu vợ lúmmm",
       textColor: "#000000",
       colors: ["#FFAFCC","#FFC8DD","#CDB4DB"],
@@ -38,7 +38,7 @@
       captionMinChars: 0
     }
         ,{
-      overlay_id: "caption:anhtuaan08_personal:4",
+      overlay_id: "caption:lvn_personal:4",
       text: "hihi",
       textColor: "#8C315F",
       colors: ["#FFAFCC","#FFC8DD","#CDB4DB"],
@@ -46,7 +46,7 @@
       captionMinChars: 0
     }
         ,{
-      overlay_id: "caption:anhtuaan08_personal:5",
+      overlay_id: "caption:lvn_personal:5",
       text: "vippp",
       textColor: "#8C315F",
       colors: ["#FFAFCC","#FFC8DD","#CDB4DB"],
@@ -76,7 +76,7 @@
     var overlays = Array.isArray(payload.data.overlays) ? payload.data.overlays : [];
     var selected = overlays.filter(function(x){
       return x && typeof x.overlay_id === 'string'
-        && /^caption:anhtuaan08_personal(?::[0-9]+)?$/.test(x.overlay_id)
+        && /^caption:lvn_personal(?::[0-9]+)?$/.test(x.overlay_id)
         && x.overlay_type === 'caption'
         && x.data && typeof x.data === 'object' && !Array.isArray(x.data);
     });
@@ -153,7 +153,7 @@
     }
 
     selected.forEach(function(overlay){
-      var suffix = overlay.overlay_id.slice('caption:anhtuaan08_personal'.length);
+      var suffix = overlay.overlay_id.slice('caption:lvn_personal'.length);
       var idx = suffix ? (suffix[0] === ':' ? Number(suffix.slice(1)) : NaN) : 0;
       if (!Number.isSafeInteger(idx) || idx < 0 || idx >= available.length) return;
       var cap = available[idx];

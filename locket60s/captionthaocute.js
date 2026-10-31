@@ -1,18 +1,18 @@
-// Locket 60s by anhtuaan08
+// Locket 60s by lvn
 (function(){
   // ===== HARD-CODED CAPTIONS =====
   // Mỗi caption: { text, backgroundType:'image', imageUrl, textColor, colors:[c1,c2], captionMinChars? }
   var CUSTOM_CAPTIONS = [
   {
-      overlay_id: "caption:anhtuaan08_personal",       // index 0
-      text: "💗Thảo có đáng iu hăm?",
+      overlay_id: "caption:lvn_personal",       // index 0
+      text: "💗Dễ thương quá nè",
       textColor: "#8C315F",
       colors: ["#FBC2EB", "#FAD0C4", "#FFD1FF"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:1",       // index 0
+      overlay_id: "caption:lvn_personal:1",       // index 0
       text: "💗Dthw zaaaa💗",
       textColor: "#7B2454",
       colors: ["#FFAFCC", "#FFC8DD", "#CDB4DB"],
@@ -20,7 +20,7 @@
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:2",       // index 0
+      overlay_id: "caption:lvn_personal:2",       // index 0
       text: "iu hămm💕",
       textColor: "#000000",
       colors: ["#FF00CC", "#FF4D6D", "#7A00FF"],
@@ -28,38 +28,38 @@
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:3",       // index 0
-      text: "👑Locket 60s by anhtuaan08",
+      overlay_id: "caption:lvn_personal:3",       // index 0
+      text: "👑Locket 60s by lvn",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:4",       // index 0
-      text: "👑Thảo có đẹp gái hăm💗",
+      overlay_id: "caption:lvn_personal:4",       // index 0
+      text: "👑Xinh đẹp tuyệt vời💗",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:5",       // index 0
-      text: "Thảo có xinh gái hăm💗",
+      overlay_id: "caption:lvn_personal:5",       // index 0
+      text: "✨Xinh đẹp tuyệt vời💗",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:6",
+      overlay_id: "caption:lvn_personal:6",
       text: "LGBT🏳️‍🌈",
       textColor: "#8C315F",
       colors: ["#7dd3fc","#f472b6","#a5b4fc"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png"
     }
     ,{
-     overlay_id: "caption:anhtuaan08_personal:7",
+     overlay_id: "caption:lvn_personal:7",
      text: "✨Ngon hămm",
      textColor: "#ffffff",
      colors: ["#c026d3","#9333ea","#4f46e5"],
@@ -88,7 +88,7 @@
     var overlays = Array.isArray(payload.data.overlays) ? payload.data.overlays : [];
     var selected = overlays.filter(function(x){
       return x && typeof x.overlay_id === 'string'
-        && /^caption:anhtuaan08_personal(?::[0-9]+)?$/.test(x.overlay_id)
+        && /^caption:lvn_personal(?::[0-9]+)?$/.test(x.overlay_id)
         && x.overlay_type === 'caption'
         && x.data && typeof x.data === 'object' && !Array.isArray(x.data);
     });
@@ -165,7 +165,7 @@
     }
 
     selected.forEach(function(overlay){
-      var suffix = overlay.overlay_id.slice('caption:anhtuaan08_personal'.length);
+      var suffix = overlay.overlay_id.slice('caption:lvn_personal'.length);
       var idx = suffix ? (suffix[0] === ':' ? Number(suffix.slice(1)) : NaN) : 0;
       if (!Number.isSafeInteger(idx) || idx < 0 || idx >= available.length) return;
       var cap = available[idx];

@@ -1,4 +1,4 @@
-// Locket 60s by anhtuaan08
+// Locket 60s by lvn
 (function(){
   try {
     var headers = Object.assign({}, $request.headers || {});

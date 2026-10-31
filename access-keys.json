@@ -1,24 +1,16 @@
 {
   "description": "Danh sách Access Key mở khóa TOÀN BỘ hệ thống (Full Access): Mở khóa tạo Caption, Khung Viền Widget, Module 60s, YouTube Premium, Spotify Premium và DNS Duy Trì Vĩnh Viễn.",
-  "adminMasterKey": "ANHTUAN_ADMIN_2026",
+  "adminMasterKey": "LVN_ADMIN_2026",
   "keys": [
     {
-      "key": "Locket60s-0934956647",
-      "owner": "thaocute (Vợ Yêu Anh Tuấn - Quyền Tối Thượng)",
-      "boundUsername": "thaocute",
-      "allowedFeatures": ["all"],
-      "isMaster": true,
-      "maxUses": 999999,
-      "usedCount": 0,
-      "expiresAt": "2099-12-31"
-    },
-    {
       "key": "Locket60s-0898376962",
-      "owner": "Anh Tuấn iOS (Boss Admin Web)",
-      "boundUsername": "anhtuaan08",
+      "owner": "lvn iOS (Boss Admin Web)",
+      "boundUsername": "lvn",
       "role": "admin",
       "isMaster": true,
-      "allowedFeatures": ["all"],
+      "allowedFeatures": [
+        "all"
+      ],
       "maxUses": 999999,
       "usedCount": 0,
       "expiresAt": "2099-12-31"

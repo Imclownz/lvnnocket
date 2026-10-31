@@ -4,11 +4,11 @@ const mapping = {
   'Locket': ['Gold']
 };
 // =========   Phần cố định  ========= // 
-// =========  @anhtuaan.08 ========= // 
+// =========  @lvn ========= // 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
   obj = JSON.parse($response.body);
-obj.Attention = "anhtuaan08 chúc mọi người có một trải nghiệm trọn vẹn với locketgold ạ";
-var anhtuaan08 = {
+obj.Attention = "lvn chúc mọi người có một trải nghiệm trọn vẹn với locketgold ạ";
+var lvn = {
       auto_resume_date: null,
       display_name: "locket_1600_1y",
       is_sandbox: true,
@@ -38,8 +38,8 @@ var anhtuaan08 = {
 const match = Object.keys(mapping).find(e => ua.includes(e));
 if (match) {
   let [e, s] = mapping[match];
-  s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = anhtuaan08) : obj.subscriber.subscriptions["locket_1600_1y"] = anhtuaan08, obj.subscriber.entitlements[e] = locketGold
-} else obj.subscriber.subscriptions["locket_1600_1y"] = anhtuaan08, obj.subscriber.entitlements.pro = locketGold;
+  s ? (locketGold.product_identifier = s, obj.subscriber.subscriptions[s] = lvn) : obj.subscriber.subscriptions["locket_1600_1y"] = lvn, obj.subscriber.entitlements[e] = locketGold
+} else obj.subscriber.subscriptions["locket_1600_1y"] = lvn, obj.subscriber.entitlements.pro = locketGold;
 $done({
   body: JSON.stringify(obj)
 });

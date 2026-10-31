@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#030509">
-  <title>Anh Tuấn iOS | Bảng Điều Khiển Quản Trị Hệ Thống (Admin Portal)</title>
+  <title>LVN iOS | Bảng Điều Khiển Quản Trị Hệ Thống (Admin Portal)</title>
   <meta name="robots" content="noindex, nofollow">
 
   <!-- Fonts & Icons -->
@@ -99,25 +99,25 @@
     const { useState, useEffect, useMemo } = React;
 
     const DEFAULT_CONFIG = {
-      adminCredentials: { username: "anhtuaan08", password: "admin2026@anhtuan" },
+      adminCredentials: { username: "lvn", password: "admin2026@lvn" },
       bankConfig: {
         bankNumber: "7898376962",
         bankName: "Vietcombank",
         bankOwner: "TRAN VAN ANH TUAN",
         momoNumber: "0898376962",
-        paypalUrl: "https://paypal.me/anhtuaan"
+        paypalUrl: "https://paypal.me/lvn"
       },
       contactConfig: {
-        adminTelegram: "https://t.me/anhtuaan",
-        adminInstagram: "https://www.instagram.com/anhtuaan.08",
+        adminTelegram: "https://t.me/lvn",
+        adminInstagram: "https://www.instagram.com/lvn",
         adminZalo: "https://zalo.me/0898376962",
         hotline: "0898.376.962"
       },
       telegramConfig: { telegramBotToken: "", telegramChatId: "" },
-      githubConfig: { defaultGhRepo: "cmstdev08/locket", defaultGhBranch: "master", defaultGhToken: "" },
+      githubConfig: { defaultGhRepo: "Imclownz/lvnnocket", defaultGhBranch: "master", defaultGhToken: "" },
       popupConfig: {
         enabled: false,
-        title: "🎉 THÔNG BÁO TỪ ANH TUẤN iOS",
+        title: "🎉 THÔNG BÁO TỪ LVN iOS",
         badge: "TIN NÓNG",
         content: "Gói Locket 60s VIP vĩnh viễn đang mở bán với giá ưu đãi! Chúc bạn có trải nghiệm tuyệt vời.",
         btnText: "Xem Ngay",
@@ -142,7 +142,7 @@
 
       // Data State
       const [config, setConfig] = useState(DEFAULT_CONFIG);
-      const [keysData, setKeysData] = useState({ adminMasterKey: 'ANHTUAN_ADMIN_2026', keys: [] });
+      const [keysData, setKeysData] = useState({ adminMasterKey: 'LVN_ADMIN_2026', keys: [] });
       const [loading, setLoading] = useState(true);
       const [saving, setSaving] = useState(false);
       const [toast, setToast] = useState({ show: false, text: '', icon: 'fa-check' });
@@ -220,14 +220,14 @@
       const handleLogin = (e) => {
         e.preventDefault();
         setLoginError('');
-        const validUser = config?.adminCredentials?.username || 'anhtuaan08';
-        const validPass = config?.adminCredentials?.password || 'admin2026@anhtuan';
+        const validUser = config?.adminCredentials?.username || 'lvn';
+        const validPass = config?.adminCredentials?.password || 'admin2026@lvn';
 
         if (loginUser.trim() === validUser && loginPass === validPass) {
           setIsLoggedIn(true);
           if (rememberMe) localStorage.setItem('at_admin_auth', 'true');
           sessionStorage.setItem('at_admin_auth', 'true');
-          showToast('Đăng nhập thành công! Chào mừng Boss Anh Tuấn.', 'fa-crown');
+          showToast('Đăng nhập thành công! Chào mừng Boss LVN.', 'fa-crown');
         } else {
           setLoginError('Tài khoản hoặc mật khẩu không chính xác!');
         }
@@ -327,7 +327,7 @@
       const handleSaveAndSyncGitHub = async () => {
         setSaving(true);
         const token = (config?.githubConfig?.defaultGhToken || localStorage.getItem('at_gh_token') || '').trim();
-        const repo = (config?.githubConfig?.defaultGhRepo || 'cmstdev08/locket').trim();
+        const repo = (config?.githubConfig?.defaultGhRepo || 'Imclownz/lvnnocket').trim();
         const branch = (config?.githubConfig?.defaultGhBranch || 'master').trim();
 
         // 1. Luôn lưu tạm vào LocalStorage trước để không bao giờ mất dữ liệu
@@ -514,7 +514,7 @@
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               chat_id: chatId,
-              text: `👑 <b>ANH TUẤN iOS - TEST BOT THÀNH CÔNG!</b>\n━━━━━━━━━━━━━━━━━━━━\n✅ Kết nối thành công từ Bảng Quản Trị Admin.\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}`,
+              text: `👑 <b>LVN iOS - TEST BOT THÀNH CÔNG!</b>\n━━━━━━━━━━━━━━━━━━━━\n✅ Kết nối thành công từ Bảng Quản Trị Admin.\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}`,
               parse_mode: 'HTML'
             })
           });
@@ -547,7 +547,7 @@
                 <h2 className="text-2xl font-black text-white tracking-tight">ADMIN PORTAL</h2>
                 <p className="text-xs text-slate-400 mt-1">Đăng nhập Bảng Điều Khiển Quản Trị Hệ Thống</p>
                 <span className="inline-block mt-2 px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-bold">
-                  Bản quyền: Anh Tuấn iOS
+                  Bản quyền: LVN iOS
                 </span>
               </div>
 
@@ -611,7 +611,7 @@
               </form>
 
               <div className="mt-6 pt-4 border-t border-white/5 text-center text-[11px] text-slate-500">
-                Mặc định: <code>anhtuaan08</code> | Mật khẩu: <code>admin2026@anhtuan</code>
+                Mặc định: <code>lvn</code> | Mật khẩu: <code>admin2026@lvn</code>
               </div>
             </div>
           </div>
@@ -632,7 +632,7 @@
               </div>
               <div>
                 <h1 className="font-black text-sm text-white flex items-center gap-1.5">
-                  ANH TUẤN iOS <span className="bg-emerald-500/20 text-emerald-400 text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border border-emerald-500/30">ADMIN V2.0</span>
+                  LVN iOS <span className="bg-emerald-500/20 text-emerald-400 text-[9px] font-mono font-bold px-1.5 py-0.5 rounded border border-emerald-500/30">ADMIN V2.0</span>
                 </h1>
                 <p className="text-[10px] text-slate-400 hidden sm:block">Bảng điều khiển & Quản trị dữ liệu trực tiếp lên GitHub</p>
               </div>
@@ -715,7 +715,7 @@
 
                 <div className="pt-3 mt-2 border-t border-white/5 px-2">
                   <div className="text-[10px] text-slate-500">
-                    <p>Admin: <span className="text-emerald-400 font-bold">@{config.adminCredentials?.username || 'anhtuaan08'}</span></p>
+                    <p>Admin: <span className="text-emerald-400 font-bold">@{config.adminCredentials?.username || 'lvn'}</span></p>
                     <p className="mt-0.5">Repo: <code className="text-slate-400">{config.githubConfig.defaultGhRepo}</code></p>
                   </div>
                 </div>
@@ -1498,7 +1498,7 @@
                     <input 
                       type="text"
                       name="vCode"
-                      placeholder="VD: ANHTUAN50K"
+                      placeholder="VD: LVN50K"
                       className="w-full px-3 py-2 rounded-xl bg-slate-900 border border-white/10 text-white text-xs font-mono font-bold focus:outline-none"
                       required
                     />

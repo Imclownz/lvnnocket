@@ -1,24 +1,24 @@
-// Locket 60s by anhtuaan08
+// Locket 60s by lvn
 (function(){
   // ===== HARD-CODED CONFIG =====
-  // ĐẶC QUYỀN VỢ ANH TUẤN (THAOCUTE): KHÔNG KHÓA UID, TỰ DO DÙNG TRÊN MỌI MÁY & SHARE THOẢI MÁI
+  // BẢN PRESET TỰ DO: KHÔNG KHÓA UID, DÙNG TRÊN MỌI MÁY
   var GOLD_EXPIRES_AT = "9999-01-29T10:10:14Z";
   var GOLD_JOINED_AT  = "2008-06-15";               // ngày mua Gold
-  var BADGE_USERNAMES = ["anhtuaan08"];             // lowercase, không @
+  var BADGE_USERNAMES = ["lvn"];             // lowercase, không @
   var WIDGET_FRAME_URL = "https://i.ibb.co/0VJyfqCV/Thi-t-k-ch-a-c-t-n-2-1.png";
 
   // Caption cá nhân — phải khớp với CUSTOM_CAPTIONS trong caption-post.js
   var MY_CAPTIONS = [
     {
-      overlay_id: "caption:anhtuaan08_personal",       // index 0
-      text: "💗Thảo có đáng iu hăm?",
+      overlay_id: "caption:lvn_personal",       // index 0
+      text: "💗Dễ thương quá nè",
       textColor: "#8C315F",
       colors: ["#FBC2EB", "#FAD0C4", "#FFD1FF"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:1",       // index 0
+      overlay_id: "caption:lvn_personal:1",       // index 0
       text: "💗Dthw zaaaa💗",
       textColor: "#7B2454",
       colors: ["#FFAFCC", "#FFC8DD", "#CDB4DB"],
@@ -26,7 +26,7 @@
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:2",       // index 0
+      overlay_id: "caption:lvn_personal:2",       // index 0
       text: "iu hămm💕",
       textColor: "#000000",
       colors: ["#FF00CC", "#FF4D6D", "#7A00FF"],
@@ -34,38 +34,38 @@
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:3",       // index 0
-      text: "👑Locket 60s by anhtuaan08",
+      overlay_id: "caption:lvn_personal:3",       // index 0
+      text: "👑Locket 60s by lvn",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:4",       // index 0
-      text: "👑Thảo có đẹp gái hăm💗",
+      overlay_id: "caption:lvn_personal:4",       // index 0
+      text: "👑Xinh đẹp tuyệt vời💗",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:5",       // index 0
-      text: "Thảo có xinh gái hăm💗",
+      overlay_id: "caption:lvn_personal:5",       // index 0
+      text: "✨Xinh đẹp tuyệt vời💗",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
     ,{
-      overlay_id: "caption:anhtuaan08_personal:6",
+      overlay_id: "caption:lvn_personal:6",
       text: "LGBT🏳️‍🌈",
       textColor: "#8C315F",
       colors: ["#7dd3fc","#f472b6","#a5b4fc"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png"
     }
     ,{
-     overlay_id: "caption:anhtuaan08_personal:7",
+     overlay_id: "caption:lvn_personal:7",
      text: "✨Ngon hămm",
      textColor: "#ffffff",
      colors: ["#c026d3","#9333ea","#4f46e5"],
@@ -73,7 +73,7 @@
     }
     // Custom Caption by Anh Tuan iOS
     // Thêm caption khác ở đây:
-    // { overlay_id: "caption:anhtuaan08_personal:1", text: "...", textColor: "#...", colors: ["#...","#..."], imageUrl: "https://..." }
+    // { overlay_id: "caption:lvn_personal:1", text: "...", textColor: "#...", colors: ["#...","#..."], imageUrl: "https://..." }
   ];
 
   var url = String($request.url || "");
@@ -157,8 +157,8 @@
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
-        settings_instagram_url: "https://www.instagram.com/anhtuaan.08/",
-        settings_tiktok_url: "https://tiktok.com/@anhtuaan08__"
+        settings_instagram_url: "https://www.instagram.com/lvn/",
+        settings_tiktok_url: "https://tiktok.com/@lvn"
       });
 
       // --- Ads + Sentry off ---
@@ -183,9 +183,10 @@
           quality_mbps: 0.6, qualityMbps: 0.6
         }),
         camera_roll: JSON.stringify({
-          gold_max_duration: 30.0, goldMaxDuration: 30.0, video_max_duration: 30.0,
-          videoMaxDuration: 30.0, max_duration: 30.0, maxDuration: 30.0,
-          trim_max_duration: 30.0, trimMaxDuration: 30.0, camera_roll_max_duration: 30.0,
+          gold_max_duration: 60.0, goldMaxDuration: 60.0, video_max_duration: 60.0,
+          videoMaxDuration: 60.0, max_duration: 60.0, maxDuration: 60.0,
+          trim_max_duration: 60.0, trimMaxDuration: 60.0, camera_roll_max_duration: 60.0,
+          max_file_size: 104857600, max_upload_bytes: 104857600, max_size_bytes: 104857600,
           quality_mbps: 0.6, qualityMbps: 0.6, flash_button: true
         }),
         live_photos: JSON.stringify({ capture: true, video: true, viewing: true,
@@ -209,6 +210,11 @@
             "leprechaun","lucky_face","sweet_hearts","elf_cutout","santa_cutout","frosty"]
         }),
         camera_roll_preview_enabled: "true", camera_roll_video_enabled: "true",
+        camera_roll_video_max_duration: "60.0", camera_roll_max_duration: "60.0",
+        camera_roll_duration: "60.0", max_video_duration: "60.0", video_max_duration: "60.0",
+        video_trim_max_duration: "60.0", trim_max_duration: "60.0", gold_max_duration: "60.0",
+        goldMaxDuration: "60.0", max_file_size: "104857600", max_upload_bytes: "104857600",
+        custom_widget_frames: "enabled", custom_widget_frames_enabled: "true",
         camera_roll_video_upload_enabled: "true", internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true", video_sound_enabled: "true",
         microphone_enabled: "true", camera_microphone_enabled: "true",
@@ -333,7 +339,7 @@
           if (!Array.isArray(groups)) groups = [];
         } catch(e) { groups = []; }
 
-        var sectionName = "🎨 Captions được thêm by anhtuaan08";
+        var sectionName = "🎨 Captions được thêm by lvn";
         var customItems = MY_CAPTIONS.map(function(c){
           return {
             overlay_id: c.overlay_id,

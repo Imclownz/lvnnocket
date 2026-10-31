@@ -1,18 +1,18 @@
 {
   "adminCredentials": {
-    "username": "anhtuaan08",
-    "password": "admin2026@anhtuan"
+    "username": "lvn",
+    "password": "admin2026@lvn"
   },
   "bankConfig": {
     "bankNumber": "7898376962",
     "bankName": "Vietcombank",
     "bankOwner": "TRAN VAN ANH TUAN",
     "momoNumber": "0898376962",
-    "paypalUrl": "https://paypal.me/anhtuaan"
+    "paypalUrl": "https://paypal.me/lvn"
   },
   "contactConfig": {
-    "adminTelegram": "https://t.me/anhtuaan",
-    "adminInstagram": "https://www.instagram.com/anhtuaan.08",
+    "adminTelegram": "https://t.me/lvn",
+    "adminInstagram": "https://www.instagram.com/lvn",
     "adminZalo": "https://zalo.me/0898376962",
     "hotline": "0898.376.962"
   },
@@ -21,13 +21,13 @@
     "telegramChatId": ""
   },
   "githubConfig": {
-    "defaultGhRepo": "cmstdev08/locket",
+    "defaultGhRepo": "Imclownz/lvnnocket",
     "defaultGhBranch": "master",
     "defaultGhToken": ""
   },
   "popupConfig": {
     "enabled": false,
-    "title": "🎉 CHÀO MỪNG ĐẾN VỚI ANH TUẤN iOS!",
+    "title": "🎉 CHÀO MỪNG ĐẾN VỚI LVN iOS!",
     "badge": "THÔNG BÁO QUAN TRỌNG",
     "content": "Gói Locket 60s VIP vĩnh viễn đang mở bán với giá ưu đãi đặc biệt! Chúc bạn có trải nghiệm tuyệt vời.",
     "btnText": "Xem Chi Tiết Ngay",
@@ -93,7 +93,7 @@
         "Sở hữu và sử dụng VĨNH VIỄN trọn đời (Không lo gia hạn)",
         "Quay & đăng video Locket tối đa 60 giây (1 Phút)",
         "ĐẶC QUYỀN: Khung Caption Custom độc quyền (đổi màu, icon, font cá nhân)",
-        "Tích hợp Module script locket60s độc quyền của Anh Tuấn",
+        "Tích hợp Module script locket60s độc quyền của lvn",
         "Chứng chỉ DNS duy trì riêng biệt vĩnh viễn",
         "Không giật lag, giữ trọn chất lượng âm thanh & hình ảnh HD",
         "Hỗ trợ cài đặt từ A-Z đến khi dùng được",
@@ -143,7 +143,7 @@
     }
   ],
   "vouchers": [
-    { "code": "ANHTUAN20K", "discount": 20000, "desc": "Giảm ngay 20.000đ áp dụng cho gói 60s VIP" },
+    { "code": "LVN20K", "discount": 20000, "desc": "Giảm ngay 20.000đ áp dụng cho gói 60s VIP" },
     { "code": "VIP60S", "discount": 50000, "desc": "Giảm sốc 50.000đ cho khách hàng VIP" }
   ]
 }

@@ -1,13 +1,13 @@
-// Locket 60s by anhtuaan08
+// Locket 60s by lvn
 (function(){
   // ===== HARD-CODED CONFIG =====
   var GOLD_EXPIRES_AT = "9999-01-29T10:10:14Z";
   var GOLD_JOINED_AT  = "2008-06-015";
-  var BADGE_USERNAMES = ["anhtuaan08"];   // lowercase, không @
+  var BADGE_USERNAMES = ["lvn"];   // lowercase, không @
   var WIDGET_FRAME_URL = "https://i.ibb.co/RTm5P1n9/kitty-1.png";
   var CUSTOM_CAPTIONS = [
     {
-    text: "Thảo có đáng iu hăm?",
+    text: "Có đáng iu hăm?",
     backgroundType: "image",
     imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
     textColor: "#db1db5",
@@ -85,7 +85,7 @@
         feature_discovery_popup_config: JSON.stringify({
           tag: "LOCKET GOLD", tag_gradient: true, tag_style: "gold_gradient",
           title: "Lên Locket Gold rồi nè",
-          feature_set: [{ title: "anhtuaan08 chào mừng vợ", body: "Hotline: 0898376962",
+          feature_set: [{ title: "lvn chào mừng bạn", body: "Hotline: 0898376962",
             imageURL: "https://i.ibb.co/ymX8cdHg/n-n-2.png" }],
           primary_button_title: "Xong", campaign: "locket_gold_welcome_v3",
           start_at: "2020-01-01T00:00:00", end_at: "2099-12-31T23:59:59",
@@ -94,8 +94,8 @@
         android_subscribe_gold_button_enabled: "false",
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
-        settings_instagram_url: "https://www.instagram.com/anhtuaan.08/",
-        settings_tiktok_url: "https://tiktok.com/@anhtuaan08__"
+        settings_instagram_url: "https://www.instagram.com/lvn/",
+        settings_tiktok_url: "https://tiktok.com/@lvn"
       });
 
       // Ads + Sentry off
@@ -120,9 +120,10 @@
           quality_mbps: 0.6, qualityMbps: 0.6
         }),
         camera_roll: JSON.stringify({
-          gold_max_duration: 30.0, goldMaxDuration: 30.0, video_max_duration: 30.0,
-          videoMaxDuration: 30.0, max_duration: 30.0, maxDuration: 30.0,
-          trim_max_duration: 30.0, trimMaxDuration: 30.0, camera_roll_max_duration: 30.0,
+          gold_max_duration: 60.0, goldMaxDuration: 60.0, video_max_duration: 60.0,
+          videoMaxDuration: 60.0, max_duration: 60.0, maxDuration: 60.0,
+          trim_max_duration: 60.0, trimMaxDuration: 60.0, camera_roll_max_duration: 60.0,
+          max_file_size: 104857600, max_upload_bytes: 104857600, max_size_bytes: 104857600,
           quality_mbps: 0.6, qualityMbps: 0.6, flash_button: true
         }),
         live_photos: JSON.stringify({ capture: true, video: true, viewing: true,
@@ -146,6 +147,11 @@
             "leprechaun","lucky_face","sweet_hearts","elf_cutout","santa_cutout","frosty"]
         }),
         camera_roll_preview_enabled: "true", camera_roll_video_enabled: "true",
+        camera_roll_video_max_duration: "60.0", camera_roll_max_duration: "60.0",
+        camera_roll_duration: "60.0", max_video_duration: "60.0", video_max_duration: "60.0",
+        video_trim_max_duration: "60.0", trim_max_duration: "60.0", gold_max_duration: "60.0",
+        goldMaxDuration: "60.0", max_file_size: "104857600", max_upload_bytes: "104857600",
+        custom_widget_frames: "enabled", custom_widget_frames_enabled: "true",
         camera_roll_video_upload_enabled: "true", internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true", video_sound_enabled: "true",
         microphone_enabled: "true", camera_microphone_enabled: "true",
