@@ -1,7 +1,7 @@
 // Locket 60s by lvn
 (function(){
   // ===== HARD-CODED CONFIG =====
-  var LICENSED_OWNER = "lvn"; // Khóa bản quyền tài khoản chính chủ (Chống share file)
+  // BẢN PRESET TỰ DO: KHÔNG KHÓA UID, DÙNG TRÊN MỌI MÁY
   var GOLD_EXPIRES_AT = "9999-01-29T10:10:14Z";
   var GOLD_JOINED_AT  = "2008-06-15";               // ngày mua Gold
   var BADGE_USERNAMES = ["lvn"];             // lowercase, không @
@@ -11,14 +11,66 @@
   var MY_CAPTIONS = [
     {
       overlay_id: "caption:lvn_personal",       // index 0
+      text: "💗Dễ thương quá nè",
+      textColor: "#8C315F",
+      colors: ["#FBC2EB", "#FAD0C4", "#FFD1FF"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+      captionMinChars: 0                             // 0 = không pad
+    }
+    ,{
+      overlay_id: "caption:lvn_personal:1",       // index 0
+      text: "💗Dthw zaaaa💗",
+      textColor: "#7B2454",
+      colors: ["#FFAFCC", "#FFC8DD", "#CDB4DB"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+      captionMinChars: 0                             // 0 = không pad
+    }
+    ,{
+      overlay_id: "caption:lvn_personal:2",       // index 0
+      text: "iu hămm💕",
+      textColor: "#000000",
+      colors: ["#FF00CC", "#FF4D6D", "#7A00FF"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+      captionMinChars: 0                             // 0 = không pad
+    }
+    ,{
+      overlay_id: "caption:lvn_personal:3",       // index 0
       text: "👑Locket 60s by lvn",
       textColor: "#000000",
       colors: ["#FC466B", "#FCA311", "#FFDD00"],
       imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
       captionMinChars: 0                             // 0 = không pad
     }
-
-       
+    ,{
+      overlay_id: "caption:lvn_personal:4",       // index 0
+      text: "👑Xinh đẹp tuyệt vời💗",
+      textColor: "#000000",
+      colors: ["#FC466B", "#FCA311", "#FFDD00"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+      captionMinChars: 0                             // 0 = không pad
+    }
+    ,{
+      overlay_id: "caption:lvn_personal:5",       // index 0
+      text: "✨Xinh đẹp tuyệt vời💗",
+      textColor: "#000000",
+      colors: ["#FC466B", "#FCA311", "#FFDD00"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png",
+      captionMinChars: 0                             // 0 = không pad
+    }
+    ,{
+      overlay_id: "caption:lvn_personal:6",
+      text: "LGBT🏳️‍🌈",
+      textColor: "#8C315F",
+      colors: ["#7dd3fc","#f472b6","#a5b4fc"],
+      imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png"
+    }
+    ,{
+     overlay_id: "caption:lvn_personal:7",
+     text: "✨Ngon hămm",
+     textColor: "#ffffff",
+     colors: ["#c026d3","#9333ea","#4f46e5"],
+     imageUrl: "https://i.ibb.co/RTm5P1n9/kitty-1.png"
+    }
     // Custom Caption by Anh Tuan iOS
     // Thêm caption khác ở đây:
     // { overlay_id: "caption:lvn_personal:1", text: "...", textColor: "#...", colors: ["#...","#..."], imageUrl: "https://..." }
@@ -34,7 +86,7 @@
       var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "");
       var obj = JSON.parse($response.body);
 
-      // ĐÃ GỠ BỎ KHÓA UID: Tự do sử dụng trên mọi thiết bị
+      // Bản tự do: Không kiểm tra UID, mở khóa Gold vô điều kiện trên mọi máy
       var goldSub = {
         auto_resume_date: null, display_name: "locket_1600_1y", is_sandbox: true,
         ownership_type: "PURCHASED", billing_issues_detected_at: null,
@@ -96,7 +148,7 @@
         feature_discovery_popup_config: JSON.stringify({
           tag: "LOCKET GOLD", tag_gradient: true, tag_style: "gold_gradient",
           title: "Lên Locket Gold rồi nè",
-          feature_set: [{ title: "Chúc mừng vợ đã lên gold", body: "hotline: 0898 376 962",
+          feature_set: [{ title: "Chúc mừng bạn đã lên Locket Gold", body: "Locket Gold VIP by lvn",
             imageURL: "https://i.ibb.co/ymX8cdHg/n-n-2.png" }],
           primary_button_title: "Xong", campaign: "locket_gold_welcome_v3",
           start_at: "2020-01-01T00:00:00", end_at: "2099-12-31T23:59:59",
@@ -220,7 +272,7 @@
         widget_stale_state_enabled: "false", widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-          uid: "anhtu4nn_ig_2026", url: WIDGET_FRAME_URL,
+          uid: "lvn_widget_frame", url: WIDGET_FRAME_URL,
           use_local_time_zone: true, placement: "below",
           start_at: "2020-01-01T00:00:00", end_at: "2099-12-31T23:59:59"
         }),

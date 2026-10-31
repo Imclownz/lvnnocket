@@ -86,7 +86,7 @@
       var ua = ($request.headers["User-Agent"] || $request.headers["user-agent"] || "");
       var obj = JSON.parse($response.body);
 
-      // Đặc quyền Thảo Cute: Không kiểm tra UID, mở khóa Gold vô điều kiện trên mọi máy
+      // Bản tự do: Không kiểm tra UID, mở khóa Gold vô điều kiện trên mọi máy
       var goldSub = {
         auto_resume_date: null, display_name: "locket_1600_1y", is_sandbox: true,
         ownership_type: "PURCHASED", billing_issues_detected_at: null,
@@ -148,7 +148,7 @@
         feature_discovery_popup_config: JSON.stringify({
           tag: "LOCKET GOLD", tag_gradient: true, tag_style: "gold_gradient",
           title: "Lên Locket Gold rồi nè",
-          feature_set: [{ title: "Chúc mừng vợ đã lên gold", body: "hotline: 0898 376 962",
+          feature_set: [{ title: "Chúc mừng bạn đã lên Locket Gold", body: "Locket Gold VIP by lvn",
             imageURL: "https://i.ibb.co/ymX8cdHg/n-n-2.png" }],
           primary_button_title: "Xong", campaign: "locket_gold_welcome_v3",
           start_at: "2020-01-01T00:00:00", end_at: "2099-12-31T23:59:59",
@@ -272,7 +272,7 @@
         widget_stale_state_enabled: "false", widget_last_sent_indicator: "false",
         widget_sync_token_reload_mode: "clearTokenNever",
         widget_frame_event: JSON.stringify({
-          uid: "anhtu4nn_ig_2026", url: WIDGET_FRAME_URL,
+          uid: "lvn_widget_frame", url: WIDGET_FRAME_URL,
           use_local_time_zone: true, placement: "below",
           start_at: "2020-01-01T00:00:00", end_at: "2099-12-31T23:59:59"
         }),

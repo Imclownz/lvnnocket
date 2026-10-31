@@ -1,43 +1,48 @@
 # 🚀 LOCKET 60S & GOLD + SHADOWROCKET CONFIGS (MÃ NGUỒN MỞ MIỄN PHÍ)
 
-> Bộ cấu hình (`.config`) và Module (`.sgmodule`) mở khóa **Locket Gold**, **Quay Video Locket 60s**, **Tải Video 60s Từ Thư Viện (Camera Roll)**, **Khung Caption & Viền Widget**, **YouTube Premium** và **Spotify Premium** trên iOS qua ứng dụng **Shadowrocket**.
+> Bộ cấu hình (`.conf` / `.config`) và Module (`.sgmodule`) mở khóa **Locket Gold**, **Quay Video Locket 60s**, **Tải Video 60s Từ Thư Viện (Camera Roll)**, **8+ Presets Captions Độc Quyền**, **Khung Viền Widget**, **YouTube Premium** và **Spotify Premium** trên iOS qua ứng dụng **Shadowrocket**.
 > **Đã tích hợp công nghệ Anti-QUIC (UDP 443), Anti-Revoke chứng chỉ Apple, chặn rò rỉ Apple Relay (tương thích hoàn hảo iOS 15 - 18).**
 
 ---
 
 ## 🔗 1. DANH SÁCH URL CẤU HÌNH (CHỈ CẦN COPY & DÁN VÀO SHADOWROCKET)
 
-> 💡 **Mẹo:** Nếu bạn fork repo này về tài khoản GitHub của riêng bạn (`tên-bạn/tên-repo`), chỉ cần thay `Imclownz/lvnnocket` trong đường dẫn bên dưới bằng tên repo của bạn.
+### 👑 Cấu hình Toàn Diện lvnnocket.conf (Locket Gold & 60s + 8+ Captions + YouTube + Spotify)
+*Đây là file cấu hình độc lập đầy đủ nhất, tích hợp General, Rules, Anti-Revoke, Anti-QUIC, YouTube Premium, Spotify VIP và toàn bộ tính năng Locket:*
+```text
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/lvnnocket.conf
+```
 
-### 🌟 Module Locket 60s & Gold VIP (Khuyên dùng)
+### 💛 Cấu hình Locket Chuyên Sâu locket.conf (Chỉ Locket Gold & 60s + 8+ Captions)
+*Dành riêng cho bạn nào chỉ muốn tối ưu cho Locket mà không cần động chạm ứng dụng khác:*
+```text
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket.conf
+```
+
+### 🌟 Module Locket 60s & Gold VIP (Khuyên dùng khi add dạng Module)
 Mở khóa Locket Gold vĩnh viễn + Quay & đăng video 60 giây (kể cả từ Cuộn Camera) + Khung Caption & Widget:
 ```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/locket60s.sgmodule
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s.sgmodule
 ```
 
 ### 💗 Module Locket 60s (Bản kèm sẵn 8 Caption Preset)
 ```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/locket60sprivate.sgmodule
-```
-
-### ⚡ Locket Gold Config (Cấu hình cơ bản)
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/locketgoldbyanhtuaan.config
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60sprivate.sgmodule
 ```
 
 ### 🔥 All-In-One Config (Locket Gold + YouTube + Spotify 3 trong 1)
 ```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/allinone.config
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/allinone.config
 ```
 
 ### ▶️ YouTube Premium Config (Chặn quảng cáo, phát nền & PiP)
 ```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/youtubepremium.config
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/youtubepremium.config
 ```
 
 ### 🎵 Spotify Premium Config
 ```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/refs/heads/master/spotify.config
+https://raw.githubusercontent.com/Imclownz/lvnnocket/master/spotify.config
 ```
 
 ---
@@ -54,9 +59,9 @@ Tải trực tiếp các file trong thư mục [`dns/`](./dns) về iPhone để
 
 ## 📖 3. HƯỚNG DẪN CÀI ĐẶT NHANH TRÊN SHADOWROCKET
 
-1. **Thêm Cấu Hình / Module:**
-   - Với file `.config`: Mở **Shadowrocket** $\rightarrow$ Tab **Cấu hình (Config)** $\rightarrow$ Bấm dấu **`+`** góc trên bên phải $\rightarrow$ Dán URL `.config` vào $\rightarrow$ Bấm **Tải về**.
-   - Với file `.sgmodule`: Mở **Shadowrocket** $\rightarrow$ Tab **Cấu hình (Config)** $\rightarrow$ Mục **Module** $\rightarrow$ Bấm dấu **`+`** $\rightarrow$ Dán URL `.sgmodule` vào $\rightarrow$ Bấm **Đồng ý**.
+1. **Thêm Cấu Hình (`.conf`):**
+   - Mở **Shadowrocket** $\rightarrow$ Tab **Cấu hình (Config)** $\rightarrow$ Bấm dấu **`+`** góc trên bên phải $\rightarrow$ Dán URL `lvnnocket.conf` (hoặc `locket.conf`) vào $\rightarrow$ Bấm **Tải về**.
+   - Chạm vào cấu hình vừa tải về và chọn **Sử dụng cấu hình**.
 2. **Bật Giải Mã HTTPS (MITM):**
    - Trong tab **Cấu hình**, bấm vào biểu tượng chữ **`(i)`** bên cạnh file cấu hình đang dùng $\rightarrow$ Chọn **Giải mã HTTPS (HTTPS Decryption)** $\rightarrow$ Bật công tắc lên.
 3. **Tạo & Tin Cậy Chứng Chỉ CA:**
@@ -64,14 +69,20 @@ Tải trực tiếp các file trong thư mục [`dns/`](./dns) về iPhone để
    - Vào **Cài đặt (iPhone)** $\rightarrow$ **Đã tải về hồ sơ** (hoặc *Cài đặt chung $\rightarrow$ Quản lý VPN & Thiết bị*) $\rightarrow$ Cài đặt chứng chỉ Shadowrocket.
    - Vào **Cài đặt chung** $\rightarrow$ **Giới thiệu** $\rightarrow$ Kéo xuống cuối chọn **Cài đặt tin cậy chứng nhận** $\rightarrow$ Bật xanh chứng chỉ **Shadowrocket**.
 4. **Kích Hoạt:**
-   - Quay lại ứng dụng **Shadowrocket**, bật kết nối VPN và mở ứng dụng **Locket** để sử dụng!
+   - Quay lại ứng dụng **Shadowrocket**, bật kết nối VPN và mở ứng dụng **Locket** để tận hưởng đầy đủ Gold, 60s và Captions!
 
 ---
 
-## 🎨 4. TÙY CHỈNH CAPTION & KHUNG VIỀN WIDGET TRÊN WEB
-Truy cập giao diện web (`index.html`) để:
-- Tự do chọn các **Preset Caption hot nhất** (Dỗi rồi 😤, Đang bận tương tư 💭, Rep tin nhắn đi 📩, Hảo hán 🗡️, Cảm lạnh 🤧,...).
-- Tùy chỉnh màu sắc, gradient, icon cho khung Caption hoặc khung viền Widget màn hình chính và tải file `.sgmodule` cá nhân về máy hoàn toàn miễn phí.
+## 🎨 4. DANH SÁCH CAPTIONS PRESET CÓ SẴN
+File cấu hình đã tích hợp sẵn 8 kiểu caption độc quyền xuất hiện ngay trong tab Caption của Locket:
+1. 💗 Dễ thương quá nè
+2. 💗 Dthw zaaaa💗
+3. 💕 iu hămm💕
+4. 👑 Locket 60s by lvn
+5. 👑 Xinh đẹp tuyệt vời💗
+6. ✨ Xinh đẹp tuyệt vời💗
+7. 🏳️‍🌈 LGBT
+8. ✨ Ngon hămm
 
 ---
 
