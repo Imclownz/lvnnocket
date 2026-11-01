@@ -20,7 +20,7 @@
       var goldSub = {
         auto_resume_date: null,
         display_name: "locket_1600_1y",
-        is_sandbox: false,
+        is_sandbox: true,
         ownership_type: "PURCHASED",
         billing_issues_detected_at: null,
         management_url: "https://apps.apple.com/account/subscriptions",

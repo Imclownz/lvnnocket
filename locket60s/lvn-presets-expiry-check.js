@@ -10,14 +10,14 @@
   // ============================================================
   // 1. REVENUECAT — Mở khóa Locket Gold + AI Effect Packs
   // ============================================================
-  if (/^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers)/.test(url)) {
+  if (/^https:\/\/api\.(revenuecat|rc-backup)\.com\//.test(url)) {
     try {
       var obj = JSON.parse($response.body);
 
       var FAR_FUTURE = "9999-01-29T10:10:14Z";
       var PAST = "2008-06-15T10:10:14Z";
 
-      var goldSub = {
+      var goldSub1y = {
         auto_resume_date: null,
         display_name: "locket_1600_1y",
         is_sandbox: true,
@@ -36,14 +36,16 @@
         store_transaction_id: "2000001108724193"
       };
 
-      var goldEnt = {
+      var goldSubGold = Object.assign({}, goldSub1y, { display_name: "Gold" });
+
+      var goldEntGold = {
         grace_period_expires_date: null,
         purchase_date: PAST,
-        product_identifier: "locket_1600_1y",
+        product_identifier: "Gold",
         expires_date: FAR_FUTURE
       };
 
-      var proEnt = {
+      var goldEnt1y = {
         grace_period_expires_date: null,
         purchase_date: PAST,
         product_identifier: "locket_1600_1y",
@@ -58,11 +60,20 @@
       obj.subscriber.original_purchase_date = PAST;
       obj.Attention = "Locket Gold VIP by lvn";
 
-      // Kích hoạt vĩnh viễn quyền Gold & Pro chính thức
-      obj.subscriber.subscriptions["locket_1600_1y"] = goldSub;
-      obj.subscriber.subscriptions["Gold"] = goldSub;
-      obj.subscriber.entitlements["Gold"] = goldEnt;
-      obj.subscriber.entitlements["pro"] = proEnt;
+      // Kích hoạt toàn bộ định danh Gold & Pro để không bao giờ bị miss
+      obj.subscriber.subscriptions["Gold"] = goldSubGold;
+      obj.subscriber.subscriptions["locket_1600_1y"] = goldSub1y;
+      obj.subscriber.entitlements["Gold"] = goldEntGold;
+      obj.subscriber.entitlements["pro"] = goldEnt1y;
+      obj.subscriber.entitlements["locket_1600_1y"] = goldEnt1y;
+
+      // Mở khóa các gói Nhãn dán & AI Hiệu ứng máy ảnh
+      obj.subscriber.subscriptions["com.locket.Locket.FilterPack_10Photos_400"] = Object.assign({}, goldSub1y, { display_name: "FilterPack_10" });
+      obj.subscriber.subscriptions["com.locket.Locket.FilterPack_20Photos_500"] = Object.assign({}, goldSub1y, { display_name: "FilterPack_20" });
+      obj.subscriber.entitlements["effect_pack_10"] = Object.assign({}, goldEnt1y, { product_identifier: "com.locket.Locket.FilterPack_10Photos_400" });
+      obj.subscriber.entitlements["effect_pack_20"] = Object.assign({}, goldEnt1y, { product_identifier: "com.locket.Locket.FilterPack_20Photos_500" });
+      obj.subscriber.entitlements["ai_effects"] = goldEnt1y;
+      obj.subscriber.entitlements["unlock_all_effects"] = goldEnt1y;
 
       $done({ body: JSON.stringify(obj) });
     } catch (e) {
@@ -81,16 +92,16 @@
       obj.entries = obj.entries || {};
       var originalEntries = Object.assign({}, obj.entries);
 
-      var MY_VIDEO_DURATION = 30.0;
-      var durationStr = "30.0";
+      var MY_CAMERA_DURATION = 60.0;
+      var MY_CAMERAROLL_DURATION = 30.0;
       var MAX_SIZE_BYTES = 104857600; // 100MB
 
-      // Cấu hình Camera quay 60s & Bitrate tối ưu 0.45 Mbps
+      // Cấu hình Camera quay 60s & Bitrate 0.6 Mbps (chuẩn gốc cmstdev08)
       var cameraConfig = {
-        gold_max_duration: MY_VIDEO_DURATION,
-        goldMaxDuration: MY_VIDEO_DURATION,
-        max_duration: MY_VIDEO_DURATION,
-        maxDuration: MY_VIDEO_DURATION,
+        gold_max_duration: 60.0,
+        goldMaxDuration: 60.0,
+        max_duration: 60.0,
+        maxDuration: 60.0,
         ultra_wide: true,
         ultraWide: true,
         volume_button: true,
@@ -103,18 +114,18 @@
         qualityMbps: 0.6
       };
 
-      // Cấu hình Cắt & Tải Video từ Thư viện (Camera Roll) lên tới 60s
+      // Cấu hình Cắt & Tải Video từ Thư viện (Camera Roll) chuẩn 30s (chuẩn gốc cmstdev08)
       var cameraRollConfig = {
-        gold_max_duration: MY_VIDEO_DURATION,
-        goldMaxDuration: MY_VIDEO_DURATION,
-        video_max_duration: MY_VIDEO_DURATION,
-        videoMaxDuration: MY_VIDEO_DURATION,
-        max_duration: MY_VIDEO_DURATION,
-        maxDuration: MY_VIDEO_DURATION,
-        trim_max_duration: MY_VIDEO_DURATION,
-        trimMaxDuration: MY_VIDEO_DURATION,
-        camera_roll_max_duration: MY_VIDEO_DURATION,
-        camera_roll_video_max_duration: MY_VIDEO_DURATION,
+        gold_max_duration: 30.0,
+        goldMaxDuration: 30.0,
+        video_max_duration: 30.0,
+        videoMaxDuration: 30.0,
+        max_duration: 30.0,
+        maxDuration: 30.0,
+        trim_max_duration: 30.0,
+        trimMaxDuration: 30.0,
+        camera_roll_max_duration: 30.0,
+        camera_roll_video_max_duration: 30.0,
         max_file_size: MAX_SIZE_BYTES,
         max_upload_bytes: MAX_SIZE_BYTES,
         max_size_bytes: MAX_SIZE_BYTES,
@@ -556,7 +567,7 @@
           return (p && typeof p === "object" && !Array.isArray(p)) ? p : {};
         } catch(e){ return {}; }
       }
-      ["feature_gates_override","camera","camera_roll","live_photos",
+      ["feature_gates","feature_gates_override","upsell_features","camera","camera_roll","live_photos",
        "journal_settings","qr_code_config","overlays_v2_config","camera_filter_config"].forEach(function(k){
         if (Object.prototype.hasOwnProperty.call(obj.entries, k)) {
           obj.entries[k] = JSON.stringify(Object.assign(
