@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "profileType": "team-multi-agent",
+  "detectedFrom": {
+    "gitRemotes": [
+      "https://github.com/cmstdev08/locket"
+    ],
+    "teamSize": "small",
+    "aiTools": [
+      "cursor",
+      "claude",
+      "copilot",
+      "kiro"
+    ],
+    "budgetPattern": "none",
+    "hasSharedClaudeSkills": false,
+    "isGitRepo": true,
+    "branchCount": 1,
+    "trackedFileCount": 50,
+    "repoSizeKb": 0,
+    "commitsLast30d": 110,
+    "commitsTotal": 113,
+    "projectAgeDays": 0,
+    "authorCount30d": 2,
+    "activityLevel": "high",
+    "hasAidlcWorkflow": false,
+    "hasPendingProfileInit": false,
+    "remoteReachable": true,
+    "remoteOriginUrl": "https://github.com/cmstdev08/locket",
+    "remoteBranchCount": 1,
+    "remoteAuthors30d": 1,
+    "upstreamAhead": 0,
+    "upstreamBehind": 0,
+    "remoteProbeSource": "cache"
+  },
+  "enabledFeatures": {
+    "autoOptimizer": true
+  },
+  "costTracking": "full",
+  "confidence": 0.75,
+  "detectedAt": "2026-10-31T21:35:09.389Z",
+  "appliedAt": "2026-10-31T21:35:09.389Z",
+  "userPlan": "accept-detected",
+  "rationale": "Git analysis: 57 tracked files, 1 branch (1 local, 1 remote), 115 commits (112 last 30d), 2 authors (30d), high activity. Remote git (https://github.com/Imclownz/lvnnocket.git): 1 remote branch, 2 remote authors (30d), via remote-tracking, ahead 2 / behind 0 vs upstream. Collaborative or multi-branch product — full sync and attribution."
+}

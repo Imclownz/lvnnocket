@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-31T20:51:08.068Z",
+  "proposalsGeneratedAt": "2026-10-31T20:51:05.972Z",
+  "source": "session-apply",
+  "activeSkills": [
+    "self-learning",
+    "file-style-conventions",
+    "skill-creator",
+    "skill-usage-insights",
+    "skill-feedback-adaptation",
+    "skill-official-updater",
+    "extension-value-audit",
+    "github-actions-ci"
+  ],
+  "ignoredSkills": []
+}

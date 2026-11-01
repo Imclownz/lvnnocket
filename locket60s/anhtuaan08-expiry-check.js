@@ -1,5 +1,5 @@
 // ============================================================
-// Locket Gold & 60s VIP + Full Captions (240+ Presets) by lvn
+// Locket Gold & 60s VIP + Full Captions & AI Filters by lvn
 // Supports: Shadowrocket / Loon / Surge / Quantumult X
 // Tự do sử dụng trên mọi thiết bị • Mở khóa toàn bộ chức năng
 // ============================================================
@@ -8,7 +8,7 @@
   var url = String($request.url || "");
 
   // ============================================================
-  // 1. REVENUECAT — Mở khóa Locket Gold vĩnh viễn
+  // 1. REVENUECAT — Mở khóa Locket Gold + AI Filter Packs vĩnh viễn
   // ============================================================
   if (/^https:\/\/api\.revenuecat\.com\//.test(url)) {
     try {
@@ -18,10 +18,11 @@
       var FAR_FUTURE = "9999-01-29T10:10:14Z";
       var PAST = "2008-06-15T10:10:14Z";
 
+      // Đặt is_sandbox: false để hệ thống AI của Locket xác thực tài khoản sản xuất thật
       var goldSub = {
         auto_resume_date: null,
         display_name: "locket_1600_1y",
-        is_sandbox: true,
+        is_sandbox: false,
         ownership_type: "PURCHASED",
         billing_issues_detected_at: null,
         management_url: "https://apps.apple.com/account/subscriptions",
@@ -44,14 +45,28 @@
         expires_date: FAR_FUTURE
       };
 
+      var pack10Sub = Object.assign({}, goldSub, { display_name: "com.locket.Locket.FilterPack_10Photos_400" });
+      var pack20Sub = Object.assign({}, goldSub, { display_name: "com.locket.Locket.FilterPack_20Photos_500" });
+      var pack10Ent = Object.assign({}, goldEnt, { product_identifier: "com.locket.Locket.FilterPack_10Photos_400" });
+      var pack20Ent = Object.assign({}, goldEnt, { product_identifier: "com.locket.Locket.FilterPack_20Photos_500" });
+
       if (ua.indexOf("Locket") !== -1 || true) {
         obj.subscriber = obj.subscriber || {};
         obj.subscriber.subscriptions = obj.subscriber.subscriptions || {};
         obj.subscriber.entitlements = obj.subscriber.entitlements || {};
         obj.Attention = "Locket Gold VIP by lvn";
+
+        // Mở khóa Gold
         obj.subscriber.subscriptions["Gold"] = goldSub;
         obj.subscriber.subscriptions["locket_1600_1y"] = goldSub;
         obj.subscriber.entitlements["Gold"] = goldEnt;
+
+        // Mở khóa gói AI Filter Packs (Tạo diện mạo & AI stickers)
+        obj.subscriber.subscriptions["com.locket.Locket.FilterPack_10Photos_400"] = pack10Sub;
+        obj.subscriber.subscriptions["com.locket.Locket.FilterPack_20Photos_500"] = pack20Sub;
+        obj.subscriber.entitlements["effect_pack_10"] = pack10Ent;
+        obj.subscriber.entitlements["effect_pack_20"] = pack20Ent;
+        obj.subscriber.entitlements["ai_effects"] = goldEnt;
       }
 
       $done({ body: JSON.stringify(obj) });
@@ -62,7 +77,7 @@
   }
 
   // ============================================================
-  // 2. FIREBASE REMOTE CONFIG — 60s Video, Full Captions, Poll, etc.
+  // 2. FIREBASE REMOTE CONFIG — 60s Video, AI Filters & Full Captions
   // ============================================================
   if (/^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\//.test(url)) {
     try {
@@ -726,16 +741,21 @@
     });
 
 
-      // Đảm bảo đầy đủ các key Video 60s & Camera Roll không bị giới hạn
-      var MY_VIDEO_DURATION = 60.0;
-      var durationStr = "60.0";
-      var MAX_SIZE_BYTES = 104857600; // 100MB
+      
+
+      // ============================================================
+      // CẤU HÌNH THỜI LƯỢNG 60S & TỐI ƯU NÉN 0.5 MBPS CHỐNG LỖI 6MB SERVER
+      // (Dùng chuỗi nguyên "60" để hàm Int() trong mã nguồn Swift của iOS không bị lỗi trả về nil)
+      // ============================================================
+      var durationNum = 60;
+      var durationStr = "60";
+      var MAX_SIZE_BYTES = 104857600; // 100MB bộ đệm
 
       var cameraConfig = {
-        gold_max_duration: MY_VIDEO_DURATION,
-        goldMaxDuration: MY_VIDEO_DURATION,
-        max_duration: MY_VIDEO_DURATION,
-        maxDuration: MY_VIDEO_DURATION,
+        gold_max_duration: durationNum,
+        goldMaxDuration: durationNum,
+        max_duration: durationNum,
+        maxDuration: durationNum,
         ultra_wide: true,
         ultraWide: true,
         volume_button: true,
@@ -744,32 +764,77 @@
         telephoto: true,
         srgb: true,
         lanczos: true,
-        quality_mbps: 0.6,
-        qualityMbps: 0.6
+        quality_mbps: 0.5,
+        qualityMbps: 0.5
       };
 
       var cameraRollConfig = {
-        gold_max_duration: MY_VIDEO_DURATION,
-        goldMaxDuration: MY_VIDEO_DURATION,
-        video_max_duration: MY_VIDEO_DURATION,
-        videoMaxDuration: MY_VIDEO_DURATION,
-        max_duration: MY_VIDEO_DURATION,
-        maxDuration: MY_VIDEO_DURATION,
-        trim_max_duration: MY_VIDEO_DURATION,
-        trimMaxDuration: MY_VIDEO_DURATION,
-        camera_roll_max_duration: MY_VIDEO_DURATION,
-        camera_roll_video_max_duration: MY_VIDEO_DURATION,
+        gold_max_duration: durationNum,
+        goldMaxDuration: durationNum,
+        video_max_duration: durationNum,
+        videoMaxDuration: durationNum,
+        max_duration: durationNum,
+        maxDuration: durationNum,
+        trim_max_duration: durationNum,
+        trimMaxDuration: durationNum,
+        camera_roll_max_duration: durationNum,
+        camera_roll_video_max_duration: durationNum,
         max_file_size: MAX_SIZE_BYTES,
         max_upload_bytes: MAX_SIZE_BYTES,
         max_size_bytes: MAX_SIZE_BYTES,
-        quality_mbps: 0.6,
-        qualityMbps: 0.6,
+        quality_mbps: 0.5,
+        qualityMbps: 0.5,
         flash_button: true,
         video: true
       };
 
       obj.entries.camera = JSON.stringify(cameraConfig);
       obj.entries.camera_roll = JSON.stringify(cameraRollConfig);
+
+      // Bật cờ Feature Gates mở rộng cho AI & Camera Roll
+      try {
+        var fg = JSON.parse(obj.entries.feature_gates || "{}");
+        Object.assign(fg, {
+          app_icon_picker: "enabled",
+          camera_roll: "enabled",
+          camera_theme: "enabled",
+          locket_views: "enabled",
+          long_captions: "enabled",
+          longer_video: "enabled",
+          unlimited_friends: "enabled",
+          priority_support: "enabled",
+          profile_badge: "enabled",
+          remove_ads: "enabled",
+          video: "enabled",
+          custom_widget_frames: "enabled",
+          streak_recovery: "enabled",
+          camera_filters: "enabled",
+          custom_camera_filters: "enabled",
+          ai_filters: "enabled",
+          ai_looks: "enabled",
+          avatar_generator: "enabled",
+          generative_filters: "enabled",
+          effects: "enabled",
+          effect_packs: "enabled"
+        });
+        obj.entries.feature_gates = JSON.stringify(fg);
+      } catch(e) {}
+
+      // Bật cờ Upsell mở rộng
+      try {
+        var uf = JSON.parse(obj.entries.upsell_features || "{}");
+        Object.assign(uf, {
+          app_icon_picker: true,
+          camera_roll: true,
+          camera_theme: true,
+          locket_views: true,
+          remove_ads: true,
+          custom_widget_frames: true,
+          camera_filters: true,
+          ai_filters: true
+        });
+        obj.entries.upsell_features = JSON.stringify(uf);
+      } catch(e) {}
 
       Object.assign(obj.entries, {
         camera_roll_preview_enabled: "true",
@@ -788,69 +853,32 @@
         goldMaxDuration: durationStr,
         max_file_size: MAX_SIZE_BYTES.toString(),
         max_upload_bytes: MAX_SIZE_BYTES.toString(),
-        video_quality_mbps: "0.6",
+        video_quality_mbps: "0.5",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
         audio_session_deactivation_enabled: "true",
         zoom_enabled: "true",
         upload_main: "false",
-        upload_main_image_quality: "1.0",
+        upload_main_image_quality: "0.8",
         upload_main_image_size: "1440",
-        upload_thumbnail_image_quality: "1.0",
-        upload_thumbnail_image_size: "1020"
+        upload_thumbnail_image_quality: "0.8",
+        upload_thumbnail_image_size: "1020",
+        // Kích hoạt toàn diện AI Nhãn dán / Tạo diện mạo
+        ai_effects_enabled: "true",
+        ai_filters_enabled: "true",
+        generative_ai_enabled: "true",
+        camera_filters_enabled: "true",
+        photo_enhancer_enabled: "true",
+        avatar_generator_enabled: "true",
+        allows_custom_filters: "true",
+        show_filter_button: "true"
       });
 
       $done({ body: JSON.stringify(obj) });
     } catch (e) {
       $done({});
     }
-    return;
-  }
-
-  // ============================================================
-  // 3. PROFILE BADGE — Gắn huy hiệu Gold & Tự động bật VIP
-  // ============================================================
-  if (/^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?(fetchUserV2|getUserByUsername|changeProfileInfo|updateUser|createUser)(?:[/?#]|$)/.test(url)) {
-    try {
-      var rawBody = $response && $response.body;
-      if (typeof rawBody === "string" && rawBody.trim()) {
-        var data = JSON.parse(rawBody);
-        var modified = false;
-
-        function applyGold(user) {
-          if (!user || typeof user !== "object") return;
-          user.badge = "locket_gold";
-          user.is_gold = true;
-          user.gold_badge = true;
-          if (Array.isArray(user.badges)) {
-            if (user.badges.indexOf("locket_gold") === -1) user.badges.push("locket_gold");
-          } else {
-            user.badges = ["locket_gold"];
-          }
-          modified = true;
-        }
-
-        function walk(node, depth) {
-          if (!node || typeof node !== "object" || depth > 8) return;
-          if (Array.isArray(node)) {
-            node.forEach(function(item) { walk(item, depth + 1); });
-            return;
-          }
-          if (node.uid || node.username) applyGold(node);
-          for (var k in node) {
-            if (node[k] && typeof node[k] === "object") walk(node[k], depth + 1);
-          }
-        }
-
-        walk(data, 0);
-        if (modified) {
-          $done({ body: JSON.stringify(data) });
-          return;
-        }
-      }
-    } catch (e) {}
-    $done({});
     return;
   }
 
