@@ -1,8 +1,17 @@
-/***********************************************
-> deleteHeader by lvn
-***********************************************/	
-
-const version = 'V1.0.2';
-
-
-function setHeaderValue(e,a,d){var r=a.toLowerCase();r in e?e[r]=d:e[a]=d}var modifiedHeaders=$request.headers;setHeaderValue(modifiedHeaders,"X-RevenueCat-ETag",""),$done({headers:modifiedHeaders});
+// Locket 60s by lvn
+(function(){
+  try {
+    var headers = Object.assign({}, $request.headers || {});
+    for (var k in headers) {
+      var lk = k.toLowerCase();
+      if (lk === 'x-revenuecat-etag' || lk === 'if-none-match') {
+        headers[k] = '';
+      }
+    }
+    headers['X-RevenueCat-ETag'] = '';
+    headers['if-none-match'] = '';
+    $done({ headers: headers });
+  } catch (e) {
+    $done({});
+  }
+})();

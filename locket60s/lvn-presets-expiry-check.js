@@ -10,7 +10,7 @@
   // ============================================================
   // 1. REVENUECAT — Mở khóa Locket Gold + AI Effect Packs
   // ============================================================
-  if (/^https:\/\/api\.revenuecat\.com\//.test(url)) {
+  if (/^https:\/\/api\.(revenuecat\.com|rc-backup\.com)\//.test(url)) {
     try {
       var obj = JSON.parse($response.body);
 
@@ -20,7 +20,7 @@
       var goldSub = {
         auto_resume_date: null,
         display_name: "locket_1600_1y",
-        is_sandbox: false,
+        is_sandbox: true,
         ownership_type: "PURCHASED",
         billing_issues_detected_at: null,
         management_url: "https://apps.apple.com/account/subscriptions",
@@ -39,6 +39,13 @@
       var goldEnt = {
         grace_period_expires_date: null,
         purchase_date: PAST,
+        product_identifier: "Gold",
+        expires_date: FAR_FUTURE
+      };
+
+      var proEnt = {
+        grace_period_expires_date: null,
+        purchase_date: PAST,
         product_identifier: "locket_1600_1y",
         expires_date: FAR_FUTURE
       };
@@ -48,19 +55,11 @@
       obj.subscriber.entitlements = obj.subscriber.entitlements || {};
       obj.Attention = "Locket Gold VIP by lvn";
 
-      // Mở khóa Gold chính thức
+      // Kích hoạt vĩnh viễn quyền Gold & Pro chính thức
       obj.subscriber.subscriptions["locket_1600_1y"] = goldSub;
       obj.subscriber.subscriptions["Gold"] = goldSub;
       obj.subscriber.entitlements["Gold"] = goldEnt;
-      obj.subscriber.entitlements["pro"] = goldEnt;
-
-      // Mở khóa Gói Tạo diện mạo & Nhãn dán AI
-      obj.subscriber.subscriptions["com.locket.Locket.FilterPack_10Photos_400"] = Object.assign({}, goldSub, { display_name: "FilterPack_10" });
-      obj.subscriber.subscriptions["com.locket.Locket.FilterPack_20Photos_500"] = Object.assign({}, goldSub, { display_name: "FilterPack_20" });
-      obj.subscriber.entitlements["effect_pack_10"] = Object.assign({}, goldEnt, { product_identifier: "com.locket.Locket.FilterPack_10Photos_400" });
-      obj.subscriber.entitlements["effect_pack_20"] = Object.assign({}, goldEnt, { product_identifier: "com.locket.Locket.FilterPack_20Photos_500" });
-      obj.subscriber.entitlements["ai_effects"] = goldEnt;
-      obj.subscriber.entitlements["unlock_all_effects"] = goldEnt;
+      obj.subscriber.entitlements["pro"] = proEnt;
 
       $done({ body: JSON.stringify(obj) });
     } catch (e) {
@@ -69,7 +68,6 @@
     return;
   }
 
-  // ============================================================
   // 2. FIREBASE REMOTE CONFIG — 60s Video, Camera Roll, Filters & 240+ Captions
   // ============================================================
   if (/^https:\/\/firebaseremoteconfig\.googleapis\.com\//.test(url)) {
@@ -80,8 +78,8 @@
       obj.entries = obj.entries || {};
       var originalEntries = Object.assign({}, obj.entries);
 
-      var MY_VIDEO_DURATION = 60.0;
-      var durationStr = "60";
+      var MY_VIDEO_DURATION = 30.0;
+      var durationStr = "30.0";
       var MAX_SIZE_BYTES = 104857600; // 100MB
 
       // Cấu hình Camera quay 60s & Bitrate tối ưu 0.45 Mbps
@@ -365,15 +363,15 @@
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: "60.0",
-        camera_roll_max_duration: "60.0",
-        camera_roll_duration: "60.0",
-        max_video_duration: "60.0",
-        video_max_duration: "60.0",
-        video_trim_max_duration: "60.0",
-        trim_max_duration: "60.0",
-        gold_max_duration: "60.0",
-        goldMaxDuration: "60.0",
+        camera_roll_video_max_duration: "30.0",
+        camera_roll_max_duration: "30.0",
+        camera_roll_duration: "30.0",
+        max_video_duration: "30.0",
+        video_max_duration: "30.0",
+        video_trim_max_duration: "30.0",
+        trim_max_duration: "30.0",
+        gold_max_duration: "30.0",
+        goldMaxDuration: "30.0",
         max_file_size: MAX_SIZE_BYTES.toString(),
         max_upload_bytes: MAX_SIZE_BYTES.toString(),
         video_quality_mbps: "0.6",
