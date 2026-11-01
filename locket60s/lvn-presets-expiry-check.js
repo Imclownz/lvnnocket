@@ -39,7 +39,7 @@
       var goldEnt = {
         grace_period_expires_date: null,
         purchase_date: PAST,
-        product_identifier: "Gold",
+        product_identifier: "locket_1600_1y",
         expires_date: FAR_FUTURE
       };
 
@@ -53,6 +53,7 @@
       obj.subscriber = obj.subscriber || {};
       obj.subscriber.subscriptions = obj.subscriber.subscriptions || {};
       obj.subscriber.entitlements = obj.subscriber.entitlements || {};
+      obj.subscriber.original_purchase_date = PAST;
       obj.Attention = "Locket Gold VIP by lvn";
 
       // Kích hoạt vĩnh viễn quyền Gold & Pro chính thức
