@@ -4863,3 +4863,12 @@
 [2026-11-01T04:25:36.353Z] CLI MCP server: already configured — agents can connect.
 [2026-11-01T04:25:36.370Z] Dir cache guard hook updated.
 [2026-11-01T04:25:37.370Z] Attribution v2 hooks updated (claude/cursor/kiro/copilot as enabled).
+[2026-11-01T15:27:36.217Z] Project profile: Multi-agent team — Git analysis: 210 tracked files, 1 branch (1 local, 1 remote), 121 commits (118 last 30d), 2 authors (30d), high activity, ~1 KB git objects. Remote git (https://github.com/Imclownz/lvnnocket.git): 1 remote branch, 2 remote authors (30d), via remote-tracking. Collaborative or multi-branch product — full sync and attribution.
+[2026-11-01T15:27:37.835Z] Mirrored cost-discipline artifacts: cursor:adoption-funnel-summary.json, cursor:attribution-trust.json, cursor:dashboard-snapshot.json, cursor:pipeline-cycle.json, cursor:project-profile.json, cursor:remote-repo-probe.json, cursor:runs.snapshot.json, cursor:skills-catalog.json, cursor:system-state.json, cursor:team-economics-cache.json, cursor:today-cost.json, cursor:workspace-affinity.json, kiro:adoption-funnel-summary.json, kiro:attribution-trust.json, kiro:dashboard-snapshot.json, kiro:pipeline-cycle.json, kiro:project-profile.json, kiro:remote-repo-probe.json, kiro:runs.snapshot.json, kiro:skills-catalog.json, kiro:system-state.json, kiro:team-economics-cache.json, kiro:today-cost.json, kiro:workspace-affinity.json.
+[2026-11-01T15:27:37.836Z] Propagated focused skill set to 24 Cursor/Kiro/Copilot path(s).
+[2026-11-01T15:27:39.478Z] Filesystem MCP server: active — all agents already configured.
+[2026-11-01T15:27:39.485Z] CLI MCP server: workspace log path refreshed (1 dir(s)).
+[2026-11-01T15:27:39.489Z] CLI loop-guard hook updated.
+[2026-11-01T15:27:39.489Z] CLI MCP server: already configured — agents can connect.
+[2026-11-01T15:27:39.512Z] Dir cache guard hook updated.
+[2026-11-01T15:27:40.667Z] Attribution v2 hooks updated (claude/cursor/kiro/copilot as enabled).

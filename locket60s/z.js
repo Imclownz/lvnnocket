@@ -78,6 +78,7 @@
       obj.Attention = "Locket Gold VIP by lvn";
       obj.state = "UPDATE"; // BẮT BUỘC: Ép Locket iOS áp dụng cấu hình mới ngay lập tức
       obj.entries = obj.entries || {};
+      var originalEntries = Object.assign({}, obj.entries);
 
       var MY_VIDEO_DURATION = 60.0;
       var durationStr = "60";
@@ -97,8 +98,8 @@
         telephoto: true,
         srgb: true,
         lanczos: true,
-        quality_mbps: 0.45,
-        qualityMbps: 0.45
+        quality_mbps: 0.6,
+        qualityMbps: 0.6
       };
 
       // Cấu hình Cắt & Tải Video từ Thư viện (Camera Roll) lên tới 60s
@@ -116,8 +117,8 @@
         max_file_size: MAX_SIZE_BYTES,
         max_upload_bytes: MAX_SIZE_BYTES,
         max_size_bytes: MAX_SIZE_BYTES,
-        quality_mbps: 0.45,
-        qualityMbps: 0.45,
+        quality_mbps: 0.6,
+        qualityMbps: 0.6,
         flash_button: true
       };
 
@@ -127,22 +128,95 @@
       // Kích hoạt toàn diện Feature Gates & Upsell
       Object.assign(obj.entries, {
         feature_gates: JSON.stringify({
+          appIconPicker: "enabled",
+          cameraFilterSheet: "enabled",
+          cameraTheme: "enabled",
+          cameraRoll: "enabled",
+          customWidgetFrames: "enabled",
+          locketViews: "enabled",
+          longCaptions: "enabled",
+          longerVideo: "enabled",
+          prioritySupport: "enabled",
+          profileBadge: "enabled",
+          removeAds: "enabled",
+          streakRecovery: "enabled",
+          unlimitedFriends: "enabled",
+          video: "enabled",
           app_icon_picker: "enabled",
-          camera_roll: "enabled",
+          camera_filter_sheet: "enabled",
           camera_theme: "enabled",
+          camera_roll: "enabled",
+          custom_widget_frames: "enabled",
           locket_views: "enabled",
           long_captions: "enabled",
           longer_video: "enabled",
-          unlimited_friends: "enabled",
           priority_support: "enabled",
           profile_badge: "enabled",
           remove_ads: "enabled",
-          video: "enabled",
-          custom_widget_frames: "enabled",
           streak_recovery: "enabled",
-          camera_filters: "enabled",
-          custom_camera_filters: "enabled",
+          unlimited_friends: "enabled",
           ai_filters: "enabled",
+          ai_camera_filters: "enabled",
+          generative_ai: "enabled",
+          ai_captions: "enabled",
+          ai_effects: "enabled",
+          magic_wand: "enabled",
+          ai_features: "enabled",
+          locket_ai: "enabled",
+          image_editor_ai: "enabled",
+          camera_filters: "enabled",
+          filters: "enabled",
+          ai_style_transfer: "enabled",
+          custom_camera_filters: "enabled",
+          ai_looks: "enabled",
+          avatar_generator: "enabled",
+          generative_filters: "enabled",
+          effects: "enabled",
+          effect_packs: "enabled",
+          longer_camera_roll_videos: "enabled",
+          camera_roll_video: "enabled"
+        }),
+        feature_gates_override: JSON.stringify({
+          appIconPicker: "enabled",
+          cameraFilterSheet: "enabled",
+          cameraTheme: "enabled",
+          cameraRoll: "enabled",
+          customWidgetFrames: "enabled",
+          locketViews: "enabled",
+          longCaptions: "enabled",
+          longerVideo: "enabled",
+          prioritySupport: "enabled",
+          profileBadge: "enabled",
+          removeAds: "enabled",
+          streakRecovery: "enabled",
+          unlimitedFriends: "enabled",
+          video: "enabled",
+          app_icon_picker: "enabled",
+          camera_filter_sheet: "enabled",
+          camera_theme: "enabled",
+          camera_roll: "enabled",
+          custom_widget_frames: "enabled",
+          locket_views: "enabled",
+          long_captions: "enabled",
+          longer_video: "enabled",
+          priority_support: "enabled",
+          profile_badge: "enabled",
+          remove_ads: "enabled",
+          streak_recovery: "enabled",
+          unlimited_friends: "enabled",
+          ai_filters: "enabled",
+          ai_camera_filters: "enabled",
+          generative_ai: "enabled",
+          ai_captions: "enabled",
+          ai_effects: "enabled",
+          magic_wand: "enabled",
+          ai_features: "enabled",
+          locket_ai: "enabled",
+          image_editor_ai: "enabled",
+          camera_filters: "enabled",
+          filters: "enabled",
+          ai_style_transfer: "enabled",
+          custom_camera_filters: "enabled",
           ai_looks: "enabled",
           avatar_generator: "enabled",
           generative_filters: "enabled",
@@ -152,6 +226,17 @@
           camera_roll_video: "enabled"
         }),
         upsell_features: JSON.stringify({
+          appIconPicker: true,
+          cameraFilterSheet: true,
+          cameraTheme: true,
+          cameraRoll: true,
+          customWidgetFrames: true,
+          locketViews: true,
+          longCaptions: true,
+          longerVideo: true,
+          removeAds: true,
+          streakRecovery: true,
+          unlimitedFriends: true,
           app_icon_picker: true,
           camera_roll: true,
           camera_theme: true,
@@ -160,6 +245,11 @@
           custom_widget_frames: true,
           camera_filters: true,
           ai_filters: true,
+          ai_camera_filters: true,
+          ai_effects: true,
+          magic_wand: true,
+          locket_ai: true,
+          ai_style_transfer: true,
           longer_video: true
         }),
         paywall_presentation_config: JSON.stringify({
@@ -214,34 +304,54 @@
 
       // Cấu hình Toàn Bộ Nhãn Dán Camera & Tạo Diện Mạo (AI Stickers)
       Object.assign(obj.entries, {
-        camera_filter_config: JSON.stringify({
-          allows_custom_filters: true,
-          show_filter_button: true,
-          sheet_enabled: true,
-          open_sheet_immediately: true,
-          sheet_filters: [
-            { title: { en: "Goofy" }, filter_ids: ["okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows"] },
-            { title: { en: "Looks" }, filter_ids: ["bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns", "tatted", "mohawk", "braces", "bye_brows"] },
-            { title: { en: "Celebrate" }, filter_ids: ["slimed", "princess", "disco_lights", "cash_money", "happy_birthday"] },
-            { title: { en: "Cute" }, filter_ids: ["cutesy", "sticker_face", "flower_crown", "love_bug"] },
-            { title: { en: "Costumes" }, filter_ids: ["wedding", "cowboy_cowgirl", "giraffe", "clown"] },
-            { title: { en: "Holidays" }, filter_ids: ["easter_bunney_cutout", "easter_chick_cutout", "bearded", "leprechaun", "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"] }
-          ],
-          picker_filters: [
-            "okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows",
-            "bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns",
-            "tatted", "mohawk", "braces", "slimed", "princess",
-            "disco_lights", "cash_money", "happy_birthday", "cutesy", "sticker_face",
-            "flower_crown", "love_bug", "wedding", "cowboy_cowgirl", "giraffe",
-            "clown", "easter_bunney_cutout", "easter_chick_cutout", "bearded", "leprechaun",
-            "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
-          ]
-        }),
-        ai_effects_enabled: "true",
+        camera_filter_config: (function(){
+          var sCfg = {};
+          try { sCfg = JSON.parse(originalEntries.camera_filter_config || "{}"); } catch(e){}
+          var res = Object.assign({}, sCfg, {
+            allows_custom_filters: true,
+            show_filter_button: true,
+            allows_ai_filters: true,
+            ai_filters_enabled: true,
+            show_ai_filter_button: true,
+            sheet_enabled: true,
+            open_sheet_immediately: true,
+            allow_unlimited_ai: true,
+            ai_quota_per_day: 999999
+          });
+          if (!Array.isArray(res.sheet_filters) || res.sheet_filters.length === 0) {
+            res.sheet_filters = [
+              { title: { en: "Goofy" }, filter_ids: ["okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows"] },
+              { title: { en: "Looks" }, filter_ids: ["bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns", "tatted", "mohawk", "braces", "bye_brows"] },
+              { title: { en: "Celebrate" }, filter_ids: ["slimed", "princess", "disco_lights", "cash_money", "happy_birthday"] },
+              { title: { en: "Cute" }, filter_ids: ["cutesy", "sticker_face", "flower_crown", "love_bug"] },
+              { title: { en: "Costumes" }, filter_ids: ["wedding", "cowboy_cowgirl", "giraffe", "clown"] },
+              { title: { en: "Holidays" }, filter_ids: ["easter_bunney_cutout", "easter_chick_cutout", "bearded", "leprechaun", "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"] }
+            ];
+          }
+          if (!Array.isArray(res.picker_filters) || res.picker_filters.length === 0) {
+            res.picker_filters = [
+              "okay_wig", "influencer", "looks_maxxing", "toothless", "bye_brows",
+              "bowling_ball", "blonde_bleached", "beard", "bob_cut", "buns",
+              "tatted", "mohawk", "braces", "slimed", "princess",
+              "disco_lights", "cash_money", "happy_birthday", "cutesy", "sticker_face",
+              "flower_crown", "love_bug", "wedding", "cowboy_cowgirl", "giraffe",
+              "clown", "easter_bunney_cutout", "easter_chick_cutout", "bearded", "leprechaun",
+              "lucky_face", "sweet_hearts", "elf_cutout", "santa_cutout", "frosty"
+            ];
+          }
+          return JSON.stringify(res);
+        })(),
+        ai_generation_enabled: "true",
         ai_filters_enabled: "true",
+        ai_daily_limit: "999999",
+        generative_filters_enabled: "true",
+        camera_filters_enabled: "true",
+        magic_wand_enabled: "true",
+        ai_style_transfer_enabled: "true",
+        photo_editor_ai_enabled: "true",
+        ai_effects_enabled: "true",
         generative_ai_enabled: "true",
         face_creator_enabled: "true",
-        camera_filters_enabled: "true",
         photo_enhancer_enabled: "true",
         avatar_generator_enabled: "true",
         allows_custom_filters: "true",
@@ -255,18 +365,18 @@
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
         longer_camera_roll_videos_enabled: "true",
-        camera_roll_video_max_duration: durationStr,
-        camera_roll_max_duration: durationStr,
-        camera_roll_duration: durationStr,
-        max_video_duration: durationStr,
-        video_max_duration: durationStr,
-        video_trim_max_duration: durationStr,
-        trim_max_duration: durationStr,
-        gold_max_duration: durationStr,
-        goldMaxDuration: durationStr,
+        camera_roll_video_max_duration: "60.0",
+        camera_roll_max_duration: "60.0",
+        camera_roll_duration: "60.0",
+        max_video_duration: "60.0",
+        video_max_duration: "60.0",
+        video_trim_max_duration: "60.0",
+        trim_max_duration: "60.0",
+        gold_max_duration: "60.0",
+        goldMaxDuration: "60.0",
         max_file_size: MAX_SIZE_BYTES.toString(),
         max_upload_bytes: MAX_SIZE_BYTES.toString(),
-        video_quality_mbps: "0.45",
+        video_quality_mbps: "0.6",
         video_sound_enabled: "true",
         microphone_enabled: "true",
         camera_microphone_enabled: "true",
@@ -379,7 +489,7 @@
 
       // CDN & Storage
       Object.assign(obj.entries, {
-        cdn_domain_replacements: JSON.stringify({ "firebasestorage.googleapis.com": "cdn.locketcamera.com" }),
+        // cdn_domain_replacements: Giữ nguyên domain Firebase Storage thật để tải asset Filter AI không bị 404
         cdn_domain_replacements_video: "true",
         storage_bucket: "gs://locket-img",
         storage_bucket_video: "gs://locket-video",
@@ -436,6 +546,22 @@
         profile_badge_enabled: "true",
         profile_badge_visible: "true",
         profile_gold_badge: "true"
+      });
+
+      // --- Merge config gốc + custom (giữ key không bị override) ---
+      function readConfig(v){
+        try {
+          var p = typeof v === "string" ? JSON.parse(v) : v;
+          return (p && typeof p === "object" && !Array.isArray(p)) ? p : {};
+        } catch(e){ return {}; }
+      }
+      ["feature_gates","feature_gates_override","upsell_features","camera","camera_roll","live_photos",
+       "journal_settings","qr_code_config","overlays_v2_config","camera_filter_config"].forEach(function(k){
+        if (Object.prototype.hasOwnProperty.call(obj.entries, k)) {
+          obj.entries[k] = JSON.stringify(Object.assign(
+            readConfig(originalEntries[k]), readConfig(obj.entries[k])
+          ));
+        }
       });
 
       $done({ body: JSON.stringify(obj) });
