@@ -33,14 +33,14 @@ FINAL,DIRECT
 
 [Header Rewrite]
 # Xóa ETag & Cache Headers
-^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del x-revenuecat-etag
-^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del X-RevenueCat-ETag
+^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) header-del x-revenuecat-etag
+^https?:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers) header-del X-RevenueCat-ETag
 http-request ^https:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del if-none-match
 http-request ^https:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del If-None-Match
 
 [Script]
 # 1. Mở khóa RevenueCat Locket Gold
-revenuecat = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js
+revenuecat = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js
 
 # 2. Xóa Header RevenueCat chống cache
 deleteHeader = type=http-request,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers),timeout=60,script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/deleteHeader-expiry-check.js

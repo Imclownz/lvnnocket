@@ -10,7 +10,7 @@
   // ============================================================
   // 1. REVENUECAT — Mở khóa Locket Gold + AI Effect Packs
   // ============================================================
-  if (/^https:\/\/api\.(revenuecat\.com|rc-backup\.com)\//.test(url)) {
+  if (/^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts|subscribers)/.test(url)) {
     try {
       var obj = JSON.parse($response.body);
 
@@ -53,6 +53,8 @@
       obj.subscriber = obj.subscriber || {};
       obj.subscriber.subscriptions = obj.subscriber.subscriptions || {};
       obj.subscriber.entitlements = obj.subscriber.entitlements || {};
+      obj.subscriber.non_subscriptions = obj.subscriber.non_subscriptions || {};
+      obj.subscriber.other_purchases = obj.subscriber.other_purchases || {};
       obj.subscriber.original_purchase_date = PAST;
       obj.Attention = "Locket Gold VIP by lvn";
 
@@ -554,7 +556,7 @@
           return (p && typeof p === "object" && !Array.isArray(p)) ? p : {};
         } catch(e){ return {}; }
       }
-      ["feature_gates","feature_gates_override","upsell_features","camera","camera_roll","live_photos",
+      ["feature_gates_override","camera","camera_roll","live_photos",
        "journal_settings","qr_code_config","overlays_v2_config","camera_filter_config"].forEach(function(k){
         if (Object.prototype.hasOwnProperty.call(obj.entries, k)) {
           obj.entries[k] = JSON.stringify(Object.assign(
@@ -567,6 +569,48 @@
     } catch (e) {
       $done({});
     }
+    return;
+  }
+
+  
+  // ============================================================
+  // 3. PROFILE / BADGE — Kích hoạt huy hiệu Vương miện Locket Gold
+  // ============================================================
+  if (/^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?(fetchUserV2|getUserByUsername|changeProfileInfo|updateUser|createUser)(?:[/?#]|$)/.test(url)) {
+    try {
+      var rawBody = $response && $response.body;
+      if (typeof rawBody === "string" && rawBody.trim()) {
+        var data = JSON.parse(rawBody);
+        var modified = false;
+
+        function patchUser(u) {
+          if (!u || typeof u !== "object") return;
+          u.badge = "locket_gold";
+          u.is_gold = true;
+          u.gold_badge = true;
+          if (Array.isArray(u.badges)) {
+            if (u.badges.indexOf("locket_gold") === -1) u.badges.push("locket_gold");
+          } else {
+            u.badges = ["locket_gold"];
+          }
+          modified = true;
+        }
+
+        if (data.data) patchUser(data.data);
+        if (data.user) patchUser(data.user);
+        if (data.result && typeof data.result === "object") {
+          patchUser(data.result);
+          if (data.result.user) patchUser(data.result.user);
+          if (data.result.data) patchUser(data.result.data);
+        }
+
+        if (modified) {
+          $done({ body: JSON.stringify(data) });
+          return;
+        }
+      }
+    } catch(e) {}
+    $done({});
     return;
   }
 
