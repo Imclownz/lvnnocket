@@ -41,5 +41,5 @@
   "detectedAt": "2026-10-31T21:35:09.389Z",
   "appliedAt": "2026-10-31T21:35:09.389Z",
   "userPlan": "accept-detected",
-  "rationale": "Git analysis: 210 tracked files, 1 branch (1 local, 1 remote), 119 commits (116 last 30d), 2 authors (30d), high activity, ~1 KB git objects. Remote git (https://github.com/Imclownz/lvnnocket.git): 1 remote branch, 2 remote authors (30d), via cache. Collaborative or multi-branch product — full sync and attribution."
+  "rationale": "Git analysis: 210 tracked files, 1 branch (1 local, 1 remote), 120 commits (117 last 30d), 2 authors (30d), high activity, ~1 KB git objects. Remote git (https://github.com/Imclownz/lvnnocket.git): 1 remote branch, 2 remote authors (30d), via cache. Collaborative or multi-branch product — full sync and attribution."
 }
