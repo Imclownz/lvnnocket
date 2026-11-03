@@ -1,29 +1,6 @@
-#!name=lvn Locket Gold & 60s VIP (Full 240+ Presets & Captions & AI)
-#!desc=Module Locket Gold & 60s VIP • Full 240+ Captions (Bình chọn, Music, Holiday, GenZ, Love, Meme) • Nhãn dán AI (Tạo diện mạo) • Quay video 60s • Tải video 30s từ thư viện • Anti-QUIC • Anti-Revoke (iOS 15-18 Compatible)
+#!name=lvn Locket Gold (45s Video, Nhãn dán, Full Ghi chú & Captions)
+#!desc=Module Locket Gold tối ưu 2026: Kích hoạt Gold ổn định 100%, Quay video 45s, Dùng nhãn dán, Full Ghi chú & Caption, Không can thiệp API tránh lỗi SSL.
 #!author=lvn
-
-[Rule]
-# 1. Chống thu hồi chứng chỉ (Anti-Revoke)
-DOMAIN,ocsp.apple.com,REJECT
-DOMAIN,ocsp2.apple.com,REJECT
-DOMAIN,crl.apple.com,REJECT
-DOMAIN,valid.apple.com,REJECT
-DOMAIN-SUFFIX,ocsp.apple.com,REJECT
-
-# 2. Chặn QUIC/HTTP3 qua UDP (Port 443) ép iOS dùng TCP HTTPS để giải mã MITM ổn định
-AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT-NO-DROP
-AND,((DOMAIN,firebaseremoteconfig.googleapis.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,api.revenuecat.com),(PROTOCOL,UDP)),REJECT
-
-# 3. Chặn Apple Private Relay tránh rò rỉ và bypass tunnel ngầm trên iOS 17/18
-DOMAIN-SUFFIX,apple-relay.apple.com,REJECT
-DOMAIN-SUFFIX,apple-relay.cloudflare.com,REJECT
-DOMAIN-SUFFIX,apple-relay.akamaized.net,REJECT
-DOMAIN-SUFFIX,apple-relay.fastly-edge.com,REJECT
-DOMAIN-SUFFIX,apple-relay.mask.apple-dns.net,REJECT
-DOMAIN-SUFFIX,mask.icloud.com,REJECT
-DOMAIN-SUFFIX,mask-h2.icloud.com,REJECT
-DOMAIN-SUFFIX,mask-api.icloud.com,REJECT
 
 [Header Rewrite]
 ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) header-del x-revenuecat-etag
@@ -32,20 +9,14 @@ DOMAIN-SUFFIX,mask-api.icloud.com,REJECT
 ^https?:\/\/firebaseremoteconfig\.googleapis\.com\/.+ header-del If-None-Match
 
 [Script]
-# 1. Mở khóa RevenueCat Locket Gold (Khớp regex chuẩn cmstdev08)
-revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js, requires-body=true, max-size=-1, timeout=60
+# 1. Xóa ETag để ép RevenueCat trả về body mã 200 đầy đủ
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), timeout=60, script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/deleteHeader-expiry-check.js
 
-# 2. Xóa Header ETag ngăn server chặn cấp Gold
-deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/deleteHeader-expiry-check.js, timeout=60
+# 2. Mở khóa gói bản quyền Gold vĩnh viễn (RevenueCat)
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js
 
-# 3. Kích hoạt Quay video 60s, Tải video 30s từ thư viện, 240+ Captions & Nhãn dán AI
-locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js, requires-body=true, max-size=-1, timeout=60
-
-# 4. Kích hoạt huy hiệu Profile Gold & Vương miện
-locket_profile_badge = type=http-response, pattern=^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:[^?#]*\/)?(fetchUserV2|getUserByUsername|changeProfileInfo|updateUser|createUser)(?:[/?#]|$), script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js, requires-body=true, max-size=-1, timeout=30
-
-# 5. Xử lý đăng khoảnh khắc & Caption tùy biến
-locket_caption_post = type=http-request, pattern=^https:\/\/(api\.locketcamera\.com|us-central1-locket-4252a\.cloudfunctions\.net)\/(?:postMomentV2|postMoment)(?:\?.*)?$, script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/caption-presets.js, requires-body=true, max-size=-1, timeout=60
+# 3. Kích hoạt Video 45s, Nhãn dán AI, Full Ghi chú & Captions (Firebase Remote Config)
+locket_rc = type=http-response, pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+, requires-body=true, max-size=-1, timeout=60, script-path=https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s/lvn-presets-expiry-check.js
 
 [MITM]
-hostname = %APPEND% api.revenuecat.com, firebaseremoteconfig.googleapis.com, api.locketcamera.com, us-central1-locket-4252a.cloudfunctions.net
+hostname = %APPEND% api.revenuecat.com, firebaseremoteconfig.googleapis.com

@@ -1,17 +1,18 @@
-// Locket 60s by lvn
-(function(){
-  try {
-    var headers = Object.assign({}, $request.headers || {});
-    for (var k in headers) {
-      var lk = k.toLowerCase();
-      if (lk === 'x-revenuecat-etag' || lk === 'if-none-match') {
-        headers[k] = '';
-      }
-    }
-    headers['X-RevenueCat-ETag'] = '';
-    headers['if-none-match'] = '';
-    $done({ headers: headers });
-  } catch (e) {
-    $done({});
-  }
-})();
+// deleteHeader by lvn (Shadowrocket / Loon / Quantumult X)
+const version = 'V1.0.2';
+
+function setHeaderValue(e, a, d) {
+  var r = a.toLowerCase();
+  r in e ? (e[r] = d) : (e[a] = d);
+}
+
+try {
+  var modifiedHeaders = $request.headers || {};
+  setHeaderValue(modifiedHeaders, "X-RevenueCat-ETag", "");
+  setHeaderValue(modifiedHeaders, "x-revenuecat-etag", "");
+  setHeaderValue(modifiedHeaders, "If-None-Match", "");
+  setHeaderValue(modifiedHeaders, "if-none-match", "");
+  $done({ headers: modifiedHeaders });
+} catch (e) {
+  $done({});
+}

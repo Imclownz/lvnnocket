@@ -1,96 +1,45 @@
-# 🚀 LOCKET 60S & GOLD + SHADOWROCKET CONFIGS (MÃ NGUỒN MỞ MIỄN PHÍ)
+# 🚀 LOCKET GOLD VIP (VIDEO 45S, NHÃN DÁN, FULL GHI CHÚ & CAPTIONS)
 
-> Bộ cấu hình (`.conf` / `.config`) và Module (`.sgmodule`) mở khóa **Locket Gold**, **Quay Video Locket 60s**, **Tải Video 60s Từ Thư Viện (Camera Roll)**, **8+ Presets Captions Độc Quyền**, **Khung Viền Widget**, **YouTube Premium** và **Spotify Premium** trên iOS qua ứng dụng **Shadowrocket**.
-> **Đã tích hợp công nghệ Anti-QUIC (UDP 443), Anti-Revoke chứng chỉ Apple, chặn rò rỉ Apple Relay (tương thích hoàn hảo iOS 15 - 18).**
+> Bộ cấu hình (`.conf`) và Module (`.sgmodule`) cho **Shadowrocket** trên iOS, nghiên cứu và tối ưu hóa từ các bản cập nhật mới nhất (RealTrueHieu, vdatdv, tduc, cmstdev08):
+> - **Kích hoạt Locket Gold 100%:** Sử dụng cơ chế RevenueCat Sandbox tự nhiên, không bao giờ bị trôi Gold.
+> - **Quay & Tải Video 45 Giây:** Cấu hình thời lượng 45.0s mượt mà theo chuẩn AVFoundation, không can thiệp ép bitrate giả giúp upload khoảnh khắc thành công 100% không bị báo lỗi.
+> - **Mở khóa Toàn Bộ Nhãn Dán (Stickers & AI Camera Filters):** Gỡ bỏ triệt để popup chặn *"Mở khóa bằng Locket Gold"* khi chọn nhãn dán hoặc bấm *Tạo diện mạo*.
+> - **Bảo toàn 100% Ghi chú & Captions:** Giữ nguyên vẹn toàn bộ dynamic captions chính thức của Locket (Poll/Bình chọn, Âm nhạc, Thời tiết, Cung hoàng đạo, Review) đồng thời bổ sung các mẫu Caption VIP lên đầu.
+> - **Loại bỏ nguy cơ lỗi SSL/Mạng:** Chỉ can thiệp 2 máy chủ cấp quyền (`api.revenuecat.com`, `firebaseremoteconfig.googleapis.com`), tuyệt đối không can thiệp API upload `api.locketcamera.com` giúp app chạy nhanh, không nghẽn mạng.
 
 ---
 
-## 🔗 1. DANH SÁCH URL CẤU HÌNH (CHỈ CẦN COPY & DÁN VÀO SHADOWROCKET)
+## 🔗 1. LINK CÀI ĐẶT NHANH VÀO SHADOWROCKET
 
-### 👑 Cấu hình Toàn Diện lvnnocket.conf (Locket Gold & 60s + 8+ Captions + YouTube + Spotify)
-*Đây là file cấu hình độc lập đầy đủ nhất, tích hợp General, Rules, Anti-Revoke, Anti-QUIC, YouTube Premium, Spotify VIP và toàn bộ tính năng Locket:*
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/lvnnocket.conf
-```
-
-### 💛 Cấu hình Locket Chuyên Sâu locket.conf (Chỉ Locket Gold & 60s + 8+ Captions)
-*Dành riêng cho bạn nào chỉ muốn tối ưu cho Locket mà không cần động chạm ứng dụng khác:*
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket.conf
-```
-
-### 🌟 Module Locket 60s & Gold VIP (Khuyên dùng khi add dạng Module)
-Mở khóa Locket Gold vĩnh viễn + Quay & đăng video 60 giây (kể cả từ Cuộn Camera) + Khung Caption & Widget:
+### 🌟 Cách 1: Cài đặt dạng Module (`.sgmodule` - Khuyên dùng nhất)
+*Dạng Module là cách ổn định và đơn giản nhất trên iOS, không làm ảnh hưởng đến cấu hình mạng hay DNS của máy:*
 ```text
 https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s.sgmodule
 ```
-
-### 💗 Module Locket 60s (Bản kèm sẵn 8 Caption Preset)
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60sprivate.sgmodule
-```
-
-### 🔥 All-In-One Config (Locket Gold + YouTube + Spotify 3 trong 1)
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/allinone.config
-```
-
-### ▶️ YouTube Premium Config (Chặn quảng cáo, phát nền & PiP)
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/youtubepremium.config
-```
-
-### 🎵 Spotify Premium Config
-```text
-https://raw.githubusercontent.com/Imclownz/lvnnocket/master/spotify.config
-```
+*(Cách cài: Mở Shadowrocket $\rightarrow$ Tab **Cấu hình (Config)** $\rightarrow$ Bấm dấu **`+`** góc trên $\rightarrow$ Dán link trên $\rightarrow$ Chọn cài dưới dạng **Module** $\rightarrow$ Bật công tắc Module lên).*
 
 ---
 
-## 🛡️ 2. HỒ SƠ DNS DUY TRÌ LOCKET VĨNH VIỄN & CHỨNG CHỈ ROOT CA
-Tải trực tiếp các file trong thư mục [`dns/`](./dns) về iPhone để cài đặt hồ sơ:
-- **DNS Locket 60s:** [`dns/locket60s.mobileconfig`](./dns/locket60s.mobileconfig)
-- **DNS Locket Gold:** [`dns/locketgold.mobileconfig`](./dns/locketgold.mobileconfig)
-- **Chứng chỉ Root CA:** [`dns/rootca.mobileconfig`](./dns/rootca.mobileconfig)
+### 👑 Cách 2: Cài đặt dạng File Cấu Hình (`.conf`)
 
-> 🔒 **Cơ chế chống trôi Gold:** Sau khi dùng Shadowrocket kích hoạt Gold lần đầu thành công, cài hồ sơ DNS này lên iPhone rồi tắt hẳn VPN Shadowrocket. DNS sẽ chặn request ngầm tới RevenueCat, giúp Locket giữ vĩnh viễn Gold từ bộ nhớ máy mà không lo tốn pin hay nóng máy!
-
----
-
-## 📖 3. HƯỚNG DẪN CÀI ĐẶT NHANH TRÊN SHADOWROCKET
-
-1. **Thêm Cấu Hình (`.conf`):**
-   - Mở **Shadowrocket** $\rightarrow$ Tab **Cấu hình (Config)** $\rightarrow$ Bấm dấu **`+`** góc trên bên phải $\rightarrow$ Dán URL `lvnnocket.conf` (hoặc `locket.conf`) vào $\rightarrow$ Bấm **Tải về**.
-   - Chạm vào cấu hình vừa tải về và chọn **Sử dụng cấu hình**.
-2. **Bật Giải Mã HTTPS (MITM):**
-   - Trong tab **Cấu hình**, bấm vào biểu tượng chữ **`(i)`** bên cạnh file cấu hình đang dùng $\rightarrow$ Chọn **Giải mã HTTPS (HTTPS Decryption)** $\rightarrow$ Bật công tắc lên.
-3. **Tạo & Tin Cậy Chứng Chỉ CA:**
-   - Chọn **Tạo chứng chỉ CA mới** $\rightarrow$ **Cài đặt chứng chỉ** vào hệ thống.
-   - Vào **Cài đặt (iPhone)** $\rightarrow$ **Đã tải về hồ sơ** (hoặc *Cài đặt chung $\rightarrow$ Quản lý VPN & Thiết bị*) $\rightarrow$ Cài đặt chứng chỉ Shadowrocket.
-   - Vào **Cài đặt chung** $\rightarrow$ **Giới thiệu** $\rightarrow$ Kéo xuống cuối chọn **Cài đặt tin cậy chứng nhận** $\rightarrow$ Bật xanh chứng chỉ **Shadowrocket**.
-4. **Kích Hoạt:**
-   - Quay lại ứng dụng **Shadowrocket**, bật kết nối VPN và mở ứng dụng **Locket** để tận hưởng đầy đủ Gold, 60s và Captions!
+* **Bản chuyên biệt cho Locket (Khuyên dùng):**
+  ```text
+  https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket.conf
+  ```
+* **Bản All-In-One (Locket Gold 45s + YouTube Premium + Spotify VIP):**
+  ```text
+  https://raw.githubusercontent.com/Imclownz/lvnnocket/master/lvnnocket.conf
+  ```
 
 ---
 
-## 🎨 4. DANH SÁCH CAPTIONS PRESET CÓ SẴN
-File cấu hình đã tích hợp sẵn 8 kiểu caption độc quyền xuất hiện ngay trong tab Caption của Locket:
-1. 💗 Dễ thương quá nè
-2. 💗 Dthw zaaaa💗
-3. 💕 iu hămm💕
-4. 👑 Locket 60s by lvn
-5. 👑 Xinh đẹp tuyệt vời💗
-6. ✨ Xinh đẹp tuyệt vời💗
-7. 🏳️‍🌈 LGBT
-8. ✨ Ngon hămm
+## 📖 2. CÁC BƯỚC KÍCH HOẠT DỄ DÀNG
 
----
-
-## 🛠️ 5. CÔNG CỤ CHẨN ĐOÁN LOG THIẾT BỊ QUA CỔNG USB (`capture_locket.py`)
-Khi gặp tình trạng Shadowrocket không bắt được gói tin hoặc Locket không lên Gold:
-1. Cài đặt thư viện: `pip install tidevice`
-2. Cắm iPhone vào máy tính qua cáp USB và mở terminal chạy:
-   ```bash
-   python capture_locket.py
-   ```
-3. Mở app Locket trên điện thoại. Script sẽ đọc luồng syslog thực tế từ iPhone để báo ngay lập tức lỗi bắt tay SSL, trạng thái MITM hoặc cờ phản hồi của RevenueCat.
+1. **Cập nhật cấu hình / Module:**
+   - Trong tab **Cấu hình** của Shadowrocket, vuốt nhẹ cấu hình (hoặc module) vừa thêm và chọn **Cập nhật (Update)** để tải bản mới nhất.
+2. **Bật giải mã HTTPS (MITM):**
+   - Bấm vào chữ **`(i)`** bên cạnh cấu hình $\rightarrow$ Chọn **Giải mã HTTPS (HTTPS Decryption)** $\rightarrow$ Bật công tắc lên.
+   - Chọn **Tạo chứng chỉ CA mới** $\rightarrow$ Cài đặt vào máy $\rightarrow$ Vào *Cài đặt iPhone $\rightarrow$ Cài đặt chung $\rightarrow$ Giới thiệu $\rightarrow$ Cài đặt tin cậy chứng nhận* $\rightarrow$ Bật xanh chứng chỉ Shadowrocket.
+3. **Kích hoạt Locket:**
+   - Bật VPN Shadowrocket.
+   - **Vuốt tắt hẳn app Locket từ đa nhiệm (App Switcher)** rồi mở lại Locket để tận hưởng Gold, video 45s, nhãn dán và toàn bộ ghi chú!
