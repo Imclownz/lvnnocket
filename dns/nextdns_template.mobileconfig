@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://dns.nextdns.io/{YOUR_NEXTDNS_ID}</string>
+				<key>SupplementalMatchDomains</key>
+				<array>
+					<string>api.revenuecat.com</string>
+					<string>firebaseremoteconfig.googleapis.com</string>
+					<string>api.locketcamera.com</string>
+				</array>
+			</dict>
+			<key>PayloadDescription</key>
+			<string>Cấu hình NextDNS cho Locket Gold</string>
+			<key>PayloadDisplayName</key>
+			<string>NextDNS Locket Gold</string>
+			<key>PayloadIdentifier</key>
+			<string>com.nextdns.locketgold</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>E7F8A9B0-1234-5678-9ABC-DEF012345678</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Cấu hình NextDNS tùy chỉnh cho Locket Gold</string>
+	<key>PayloadDisplayName</key>
+	<string>NextDNS Locket Gold Profile</string>
+	<key>PayloadIdentifier</key>
+	<string>com.nextdns.locketgold.profile</string>
+	<key>PayloadOrganization</key>
+	<string>lvn &amp; spinach</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>F8A9B0C1-2345-6789-ABCD-EF0123456789</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>

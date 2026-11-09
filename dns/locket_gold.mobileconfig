@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadCertificateFileName</key>
+			<string>LocketGoldProCA.cer</string>
+			<key>PayloadContent</key>
+			<data>
+			MIIDOTCCAiGgAwIBAgIUYAYnFc2/3FOdE2W5lMhJkW2eBmAwDQYJ
+			KoZIhvcNAQELBQAwPzELMAkGA1UEBhMCVk4xHzAdBgNVBAoMFkxv
+			Y2tldCBHb2xkIFBybyBUZWFtMR8wHQYDVQQDDBZMb2NrZXQgR29s
+			ZCBQcm8gQ0EwHhcNMjYxMDE1MDk0NTIwWhcNMzYxMDEzMDk0NTIw
+			WjA/MQswCQYDVQQGEwJWTjEfMB0GA1UECgwWTG9ja2V0IEdvbGQg
+			UHJvIFRlYW0xHzAdBgNVBAMMFkxvY2tldCBHb2xkIFBybyBDQTCC
+			ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALibuOJKoDps
+			oRvmuyTMVd/zW9592QJWUbsHksYkjjj7cIrXufNxB8oMdgqVgI69
+			byBGNjwE034GrhdNksnP5R1A3akO6D97kSTE76rH26bBBICkZ6EJ
+			LOe9iYLouZJEuRCUnuSC1hTTYjsui8lNXBnYRIEZe61nfFpqbR5i
+			E02Q7pDdhA2OiJs//S1gdrRwrD8Za2qBaLNUtXy//r2rBFPOsY4t
+			teZt2ppL3qJWFJCD0i4arxiJIiEL45uJYd0PBUaFruRfIBjTkEfv
+			ExJBYTL/9XcQcSs/qN4NPAs2R82jEfUVIw4BT7vX6M/DEJ4I+960
+			3aFeJn+5Sb5MRqMTIrUCAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB
+			/zAOBgNVHQ8BAf8EBAMCAQYwHQYDVR0OBBYEFA7WnwO9gBTYmkB0
+			QY/eztpasDpuMA0GCSqGSIb3DQEBCwUAA4IBAQDg5HopG+nbAQLY
+			bRyyoLHXYICAJoXshh0yF0rztNcmMqFMTqCk8gWG4mMXNKv+TjdF
+			7RDZwsbGgZqrogZzBwIkFrYZJ2FEQUK/zJF9vcjjNpymnF9MMKH6
+			PCkIGFP48bIPJnNMyTQ57EAWuB77MdlbefK3L80O5bw6xPos+Igq
+			OL8Soi7JJ0vgjhR5X5hJM0MOi+puq/VUEa8kMMTwNirlWN8Cqz6O
+			51+nJlKMDkM2vgZ9jp4sBSe3Fwop875i+5T7zqxqmqlL4AbGYCy5
+			KrKTvSdMGQ2nEVUGDLzzTZgHxNUJO1VftVA/rOdA8wu4MD6SE/aa
+			Y4nBK8HaY9fYePVz
+			</data>
+			<key>PayloadDisplayName</key>
+			<string>Locket Gold Pro CA</string>
+			<key>PayloadIdentifier</key>
+			<string>com.lvnnocket.ca</string>
+			<key>PayloadType</key>
+			<string>com.apple.security.root</string>
+			<key>PayloadUUID</key>
+			<string>B2E8D93C-45AF-492B-A983-6D7E9F8A1B23</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>DNSSettings</key>
+			<dict>
+				<key>DNSProtocol</key>
+				<string>HTTPS</string>
+				<key>ServerURL</key>
+				<string>https://160.22.107.234/dns-query</string>
+				<key>SupplementalMatchDomains</key>
+				<array>
+					<string>api.revenuecat.com</string>
+					<string>*.revenuecat.com</string>
+					<string>revenuecat.com</string>
+					<string>firebaseremoteconfig.googleapis.com</string>
+					<string>*.firebaseremoteconfig.googleapis.com</string>
+					<string>firebaseremoteconfigrealtime.googleapis.com</string>
+					<string>*.firebaseremoteconfigrealtime.googleapis.com</string>
+					<string>api.locketcamera.com</string>
+					<string>*.locketcamera.com</string>
+					<string>firebaselogging.googleapis.com</string>
+					<string>*.firebaselogging.googleapis.com</string>
+				</array>
+			</dict>
+			<key>PayloadDisplayName</key>
+			<string>Locket Gold Pro DNS</string>
+			<key>PayloadIdentifier</key>
+			<string>com.lvnnocket.dns</string>
+			<key>PayloadType</key>
+			<string>com.apple.dnsSettings.managed</string>
+			<key>PayloadUUID</key>
+			<string>C3F9EA4D-56BA-4A3C-BA94-7E8F0A9B2C34</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>PayloadDescription</key>
+	<string>Kích hoạt Locket Gold VIP không cần VPN: 16 Khung Photobooth, Nhãn dán AI, Video 45s, Full Captions &amp; Huy hiệu Gold.</string>
+	<key>PayloadDisplayName</key>
+	<string>Locket Gold VIP DNS (Photobooth &amp; AI Stickers)</string>
+	<key>PayloadIdentifier</key>
+	<string>com.lvnnocket.dns.locketgold</string>
+	<key>PayloadOrganization</key>
+	<string>lvn &amp; spinach</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>A1B2C3D4-E5F6-7890-ABCD-EF1234567890</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
