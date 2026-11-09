@@ -1,102 +1,59 @@
-# 👑 Locket Gold VIP (DNS Profile & Shadowrocket)
+# 👑 Locket Gold VIP All-In-One (Photobooth 4 Ô, Nhãn Dán AI, Video 45s & Full Captions)
 
-Dự án mở khóa toàn diện **Locket Gold VIP** thế hệ mới (2026) hỗ trợ cả **2 phương pháp**:
-1. **Cài đặt qua DNS Profile (.mobileconfig)**: 1 chạm cài đặt, **không cần app VPN, không tốn pin, hoạt động mượt mà trên cả 4G/5G/Wi-Fi**.
-2. **Cài đặt qua Shadowrocket / Loon / Surge (.sgmodule / .conf)**: Tự chủ 100%, chạy offline trên máy.
+Giải pháp mở khóa **Locket Gold VIP Vĩnh Viễn (2099)** chạy trực tiếp trên thiết bị (không bị giới hạn dùng thử 3 phút, không khóa UID trả phí), tích hợp sẵn **30 Khung Photobooth & Nhãn Dán AI (100% Free Render)**, **Quay & Up Video 45s**, **Full Ghi Chú & Captions**, cùng **DNS Giữ Gold Chống Thu Hồi**.
 
 ---
 
-## ✨ Tính Năng Nổi Bật (Độc Quyền)
-- 📸 **16 Khung Ảnh Photobooth Hot Trend**:
-  - Khung Hello Kitty Pastel
-  - Locket Việt Nam
-  - Sao lấp lánh (Sparkles)
-  - Khủng long vàng
-  - Công chúa (Pastel Cutout)
-  - 4 mùa (Vintage Retro)
-  - Xanh đại dương (Denim)
-  - Scrapbook du lịch
-  - Vịt tốt nghiệp
-  - Cún con tiệm bánh
-  - Gấu ngọt ngào
-  - TV hồng retro
-  - Doodle pastel
-  - Khung ảnh Hello Kitty 2x2
-  - Shin chan 2x2
-  - Khung Hello Kitty cuti
-- 🤖 **Ghép ảnh Photobooth & Nhãn dán AI Tự Động**: Tích hợp server render ảnh composited chất lượng cao, có cơ chế fallback không bao giờ bị đơ hay văng app.
-- 📹 **Quay & Tải Lên Video 45 Giây**: Chuẩn tự nhiên `45.0s`, không giảm bitrate, không bị nén mờ hình, hỗ trợ chọn video từ thư viện (Camera Roll).
-- 💬 **Bảo Toàn 100% Ghi Chú & Captions Gốc**: Giữ trọn bộ caption hệ thống (Poll, Nhạc Spotify/Apple Music, Thời tiết, Vị trí, Streak, Cung hoàng đạo...) + Thêm bộ **👑 Locket Gold VIP Captions** lên trên cùng.
-- 🚫 **Gỡ Bỏ Hoàn Toàn Paywall Lịch Sử**: Không còn bị mờ ảnh cũ hay hiện popup *"Mở khóa bằng Locket Gold - Nâng cấp để xem ảnh của bạn và dùng các hiệu ứng ngày lễ khác"*.
-- 🏅 **Huy hiệu Locket Gold Profile** vàng rực rỡ trên trang cá nhân.
+## ✨ Tính Năng Nổi Bật
+- 🔓 **Mở Khóa Locket Gold Vĩnh Viễn (2099)**: Xử lý cục bộ qua script [locket_revenuecat.js](file:///d:/locket/locket60s/locket_revenuecat.js) và [locket_remote_config.js](file:///d:/locket/locket60s/locket_remote_config.js) — **tuyệt đối không bị giới hạn 3 phút dùng thử** như các DNS công cộng thu phí.
+- 📸 **16 Khung Ảnh Photobooth 4 Ô Hot Trend (Chụp liên tiếp 4 dáng)**:
+  - Khung Hello Kitty Pastel, Locket Việt Nam, Sao lấp lánh, Khủng long vàng, Công chúa, 4 mùa, Xanh đại dương, Scrapbook du lịch, Vịt tốt nghiệp, Cún con tiệm bánh, Gấu ngọt ngào, TV hồng retro, Doodle pastel, Khung ảnh Hello Kitty 2x2, Shin chan 2x2, Khung Hello Kitty cuti.
+- 🔥 **8 Nhãn Dán & Khung Đơn Độc Lạ + 6 Bộ Lọc AI Nghệ Thuật (100% Free Render)**:
+  - *I love Locket*, *TikTok Trend*, *Khung Hello Kitty ngọt ngào*, *Khung nhện đỏ*, *Miệng Rộng Hài Hước*, *Thời Sự VTV*, *Lệnh Truy Nã*, *Thug Life*.
+  - *Glamour Studio*, *Vintage Kodak 90s*, *Golden Hour Sunset*, *Y2K Digital Cam*, *Cyberpunk Neon*, *Monochrome B&W*.
+  - Đã lọc bỏ hoàn toàn các filter AI bắt mua token trả phí để **không bao giờ bị lỗi `"Không thể áp dụng bộ lọc"`**.
+- 📹 **Quay & Tải Lên Video 45 Giây**: Chuẩn `45.0s` cho cả quay trực tiếp và chọn video từ Thư viện (Camera Roll).
+- 💬 **Bảo Toàn 100% Ghi Chú & Captions Gốc + Bộ VIP Captions**: Giữ nguyên toàn bộ caption gốc của Locket (Nhạc, Poll, Thời tiết, Vị trí, Streak, Cung hoàng đạo...) và thêm mục **👑 Locket Gold VIP Captions** lên đầu danh sách.
+- 🚫 **Gỡ Bỏ Hoàn Toàn Paywall Lịch Sử**: Tắt toàn bộ cờ `upsell_features` và `history_gold_upsell_slot_config`, xem toàn bộ ảnh cũ không bị làm mờ.
 
 ---
 
-## 🚀 CÁCH 1: Cài Đặt Bằng DNS Profile (Khuyên Dùng — Không Cần App VPN)
+## 🚀 BƯỚC 1: Kích Hoạt Locket Gold VIP & Dùng Photobooth / Video 45s (Shadowrocket)
 
-Phương pháp DNS sử dụng cấu hình DoH (DNS-over-HTTPS) chuẩn của Apple. Khi cài đặt, chỉ các truy vấn kích hoạt của Locket mới được điều hướng, toàn bộ ứng dụng khác và mạng internet hoạt động với tốc độ gốc 100%.
+Để kích hoạt Gold vĩnh viễn và sử dụng **30 Khung Photobooth + Nhãn dán AI + Quay/Up Video 45s**, hãy cài đặt qua **Shadowrocket**:
 
-### Bước 1: Tải Hồ Sơ Cấu Hình
-1. Mở trình duyệt **Safari** trên iPhone.
-2. Dán link hồ sơ phù hợp vào thanh địa chỉ và bấm **Đi tới**:
-   - **Hồ sơ 1 — Mở khóa Locket Gold VIP (Tích hợp sẵn bộ 3 chứng chỉ gốc)**:
-     ```text
-     https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locket_gold.mobileconfig
-     ```
-   - **Hồ sơ 2 — Chuyên dụng 16 Khung Photobooth & AI Filter qua DNS**:
-     ```text
-     https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locket_photobooth.mobileconfig
-     ```
-3. Safari hiện thông báo: *"Trang web này đang cố gắng tải về một hồ sơ cấu hình. Bạn có muốn cho phép việc này không?"* -> Chọn **Cho phép** (Allow) -> **Đóng**.
-
-### Bước 2: Cài Đặt Hồ Sơ
-1. Mở **Cài đặt (Settings)** trên iPhone.
-2. Nhấn vào mục **Đã tải về hồ sơ (Profile Downloaded)** ngay trên đầu.
-3. Nhấn **Cài đặt (Install)** ở góc trên bên phải -> Nhập mật khẩu iPhone -> Nhấn **Cài đặt**.
-
-### Bước 3: Bật Tin Cậy Chứng Chỉ Gốc (Bắt Buộc)
-1. Vào **Cài đặt** -> **Cài đặt chung (General)** -> **Giới thiệu (About)**.
-2. Kéo xuống dưới cùng, chọn **Cài đặt tin cậy chứng nhận (Certificate Trust Settings)**.
-3. Tại mục *Bật tin cậy hoàn toàn cho các chứng nhận gốc*, gạt **BẬT (Xanh)** cho các chứng chỉ:
-   - **LocketGold** (`LocketGold CA`)
-   - **Locket Gold Root CA**
-   - **Locket Gold Pro CA**
-   -> Chọn **Tiếp tục**.
-
-### Bước 4: Tận Hưởng
-- Vuốt đóng hẳn ứng dụng Locket (Kill app từ màn hình đa nhiệm).
-- Mở lại Locket: Tài khoản của bạn đã được nâng cấp lên **Locket Gold VIP**, camera có nút bộ lọc Photobooth, quay video 45s và xem trọn vẹn lịch sử!
-
----
-
-## ⚡ CÁCH 2: Cài Đặt Bằng Shadowrocket (Module / Config)
-
-Nếu bạn muốn quản lý chứng chỉ cục bộ trên thiết bị qua ứng dụng **Shadowrocket**:
-
-### Cách Dùng Module (.sgmodule):
-1. Mở Shadowrocket -> Vào tab **Cấu hình (Config)**.
-2. Chọn mục **Modules** -> Chọn **Cài đặt Module mới (Install Module)**.
-3. Dán link module sau:
+### Cách 1: Cài bằng Module (Khuyên dùng)
+1. Mở **Shadowrocket** -> Tab **Cấu hình (Config)** -> **Modules** -> **Thêm Module (Add Module)**.
+2. Dán link sau và nhấn **OK**:
    ```text
    https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket60s.sgmodule
    ```
-4. Bật Module lên. Đảm bảo bạn đã cài và tin cậy chứng chỉ HTTPS MITM của Shadowrocket.
-5. Khởi động lại ứng dụng Locket.
+3. Đảm bảo đã bật **Giải mã HTTPS (HTTPS Decryption / MITM)** và đã tin cậy chứng chỉ gốc của Shadowrocket trong *Cài đặt -> Cài đặt chung -> Giới thiệu -> Cài đặt tin cậy chứng nhận*.
+4. Bật công tắc kết nối Shadowrocket, vuốt tắt hẳn Locket và mở lại.
 
-### Link File Cấu Hình (.conf):
-- `https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket.conf`
+### Cách 2: Cài bằng File Cấu Hình (.conf)
+Dán 1 trong 2 link sau vào mục **Thêm cấu hình (Add Configuration)** trong Shadowrocket:
 - `https://raw.githubusercontent.com/Imclownz/lvnnocket/master/lvnnocket.conf`
+- `https://raw.githubusercontent.com/Imclownz/lvnnocket/master/locket.conf`
 
 ---
 
-## 📸 Hướng Dẫn Sử Dụng Khung Photobooth & Nhãn Dán AI
-1. Mở camera Locket -> Nhấn vào biểu tượng **Bộ lọc / Filter** ở góc camera.
-2. Chọn danh mục **Photobooth Tất Cả ♡** hoặc **Cute & Hoạt Hình ♡**.
-3. Chọn khung yêu thích (Hello Kitty, Locket VN, Sao lấp lánh...).
-4. Căn góc mặt vào khung và bấm chụp! Ảnh sẽ được tự động lồng ghép viền Photobooth chuẩn nét để gửi cho bạn bè.
+## 🛡️ BƯỚC 2: Hồ Sơ DNS Giữ Locket Gold Khi Tắt Shadowrocket (Tùy Chọn)
+
+Nếu bạn đã kích hoạt lên Locket Gold bằng Bước 1 và muốn **tắt VPN Shadowrocket để tiết kiệm pin** mà vẫn giữ nguyên trạng thái Locket Gold trên máy:
+1. Mở **Safari**, truy cập link hồ sơ DNS chống thu hồi (đã chuẩn hóa chứng chỉ DER X.509 hợp lệ 100%):
+   ```text
+   https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locketgold.mobileconfig
+   ```
+2. Vào **Cài đặt** -> **Đã tải về hồ sơ** -> **Cài đặt**.
+3. *Lưu ý*: Khi cần chụp **Khung Photobooth 4 Ô**, tải **Caption mới** hoặc **Up Video 45s**, hãy bật lại **Shadowrocket** để script xử lý ghép ảnh và mở khóa cấu hình trực tiếp.
 
 ---
 
-## 🛠 Khắc Phục Sự Cố
-- **Nếu chưa thấy lên Gold ngay**: Vuốt tắt hẳn Locket trong đa nhiệm, bật/tắt chế độ máy bay 5 giây rồi mở lại Locket.
-- **Nếu muốn gỡ DNS Profile**: Vào **Cài đặt** -> **Cài đặt chung** -> **Quản lý VPN & Thiết bị** -> Chọn hồ sơ **Locket Gold VIP DNS** -> Bấm **Xóa hồ sơ**.
+## 📸 Hướng Dẫn Chụp Khung Photobooth 4 Ô
+1. Mở Locket (khi đang bật Shadowrocket) -> Nhấn vào biểu tượng **Bộ lọc (Filter)** góc dưới bên trái khung camera.
+2. Chọn khung trong mục **Photobooth 4 Ô ♡** hoặc **Nhãn Dán & Trend Hot 🔥**.
+3. Với khung **Photobooth 4 Ô**:
+   - Bấm chụp lần 1 -> Ảnh hiển thị `"ĐÃ LƯU ẢNH 1/4! Bấm nút 'X' (Chụp lại) để chụp tiếp dáng 2/4"`.
+   - Bấm nút **`X`** và chụp tiếp lần 2, lần 3, lần 4.
+   - Ở lần chụp thứ 4, server sẽ tự động ghép hoàn chỉnh cả 4 bức ảnh vào khung Photobooth để bạn bấm **Gửi**!

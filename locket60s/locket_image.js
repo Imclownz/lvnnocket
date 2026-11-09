@@ -17,7 +17,7 @@ var options = {
     "User-Agent": userAgent
   },
   "binary-mode": true,
-  timeout: 10
+  timeout: 20
 };
 
 $httpClient.get(options, function(error, response, data) {

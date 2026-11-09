@@ -17,7 +17,7 @@ var options = {
     "User-Agent": userAgent
   },
   body: bodyStr,
-  timeout: 10
+  timeout: 20
 };
 
 $httpClient.post(options, function(error, response, data) {

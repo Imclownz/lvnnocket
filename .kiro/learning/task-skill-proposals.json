@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-31T20:51:05.972Z",
+  "generatedAt": "2026-11-03T15:29:23.598Z",
   "taskSummary": "Workspace-detected skills",
   "proposals": [
     {
       "name": "extension-value-audit",
       "reason": "Workspace files match **/.claude/learning/task-skill-proposals.json, **/.claude/learning/skill-adoption.jsonl",
-      "confidence": 65,
+      "confidence": 64,
       "installed": true,
       "matchedGlobs": [
         "**/.claude/learning/task-skill-proposals.json",
@@ -16,7 +16,7 @@
         "semanticMatch": 60,
         "workspaceAffinity": 0,
         "repositoryAffinity": 0,
-        "adoptionSuccess": 5,
+        "adoptionSuccess": 4,
         "enrichment": 0,
         "penalty": 0
       },
@@ -30,7 +30,7 @@
     {
       "name": "github-actions-ci",
       "reason": "Workspace files match **/.github/**/*.md",
-      "confidence": 65,
+      "confidence": 64,
       "installed": true,
       "matchedGlobs": [
         "**/.github/**/*.md"
@@ -39,7 +39,7 @@
         "semanticMatch": 60,
         "workspaceAffinity": 0,
         "repositoryAffinity": 0,
-        "adoptionSuccess": 5,
+        "adoptionSuccess": 4,
         "enrichment": 0,
         "penalty": 0
       },
