@@ -38,10 +38,15 @@ Phương pháp DNS sử dụng cấu hình DoH (DNS-over-HTTPS) chuẩn của Ap
 
 ### Bước 1: Tải Hồ Sơ Cấu Hình
 1. Mở trình duyệt **Safari** trên iPhone.
-2. Dán link sau vào thanh địa chỉ và bấm **Đi tới**:
-   ```text
-   https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locket_gold.mobileconfig
-   ```
+2. Dán link hồ sơ phù hợp vào thanh địa chỉ và bấm **Đi tới**:
+   - **Hồ sơ 1 — Mở khóa Locket Gold VIP (Tích hợp sẵn bộ 3 chứng chỉ gốc)**:
+     ```text
+     https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locket_gold.mobileconfig
+     ```
+   - **Hồ sơ 2 — Chuyên dụng 16 Khung Photobooth & AI Filter qua DNS**:
+     ```text
+     https://raw.githubusercontent.com/Imclownz/lvnnocket/master/dns/locket_photobooth.mobileconfig
+     ```
 3. Safari hiện thông báo: *"Trang web này đang cố gắng tải về một hồ sơ cấu hình. Bạn có muốn cho phép việc này không?"* -> Chọn **Cho phép** (Allow) -> **Đóng**.
 
 ### Bước 2: Cài Đặt Hồ Sơ
@@ -52,7 +57,11 @@ Phương pháp DNS sử dụng cấu hình DoH (DNS-over-HTTPS) chuẩn của Ap
 ### Bước 3: Bật Tin Cậy Chứng Chỉ Gốc (Bắt Buộc)
 1. Vào **Cài đặt** -> **Cài đặt chung (General)** -> **Giới thiệu (About)**.
 2. Kéo xuống dưới cùng, chọn **Cài đặt tin cậy chứng nhận (Certificate Trust Settings)**.
-3. Tại mục *Bật tin cậy hoàn toàn cho các chứng nhận gốc*, gạt **BẬT (Xanh)** cho chứng chỉ **Locket Gold Pro CA** -> Chọn **Tiếp tục**.
+3. Tại mục *Bật tin cậy hoàn toàn cho các chứng nhận gốc*, gạt **BẬT (Xanh)** cho các chứng chỉ:
+   - **LocketGold** (`LocketGold CA`)
+   - **Locket Gold Root CA**
+   - **Locket Gold Pro CA**
+   -> Chọn **Tiếp tục**.
 
 ### Bước 4: Tận Hưởng
 - Vuốt đóng hẳn ứng dụng Locket (Kill app từ màn hình đa nhiệm).

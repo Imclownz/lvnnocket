@@ -50,16 +50,39 @@
       obj.subscriber.entitlements = obj.subscriber.entitlements || {};
       obj.subscriber.non_subscriptions = obj.subscriber.non_subscriptions || {};
       obj.subscriber.other_purchases = obj.subscriber.other_purchases || {};
+      obj.subscriber.subscriber_attributes = obj.subscriber.subscriber_attributes || {};
       obj.subscriber.original_purchase_date = PAST;
       obj.Attention = "Kích hoạt Locket Gold VIP thành công bởi lvn & spinach!";
 
-      const entitlements = ["Gold", "gold", "locket_gold", "pro"];
+      var nowMs = Date.now();
+      const entitlements = ["Gold", "gold", "locket_gold", "pro", "profile_badge"];
       for (var i = 0; i < entitlements.length; i++) {
         obj.subscriber.entitlements[entitlements[i]] = goldEnt;
       }
 
-      obj.subscriber.subscriptions["locket_2400_1y"] = goldSub;
-      obj.subscriber.subscriptions["locket_1600_1y"] = Object.assign({}, goldSub, { display_name: "locket_1600_1y" });
+      const subIds = [
+        "locket_1600_1y",
+        "locket_2400_1y",
+        "locket_gold_annual",
+        "locket_gold_yearly",
+        "com.locket.gold.yearly",
+        "com.locket.gold"
+      ];
+      for (var j = 0; j < subIds.length; j++) {
+        obj.subscriber.subscriptions[subIds[j]] = Object.assign({}, goldSub, { display_name: subIds[j] });
+      }
+
+      Object.assign(obj.subscriber.subscriber_attributes, {
+        "$badge": { value: "locket_gold", updated_at_ms: nowMs },
+        "profile_badge": { value: "locket_gold", updated_at_ms: nowMs },
+        "gold_badge": { value: "true", updated_at_ms: nowMs },
+        "locket_gold_badge": { value: "true", updated_at_ms: nowMs },
+        "locket_gold_badge_small": { value: "true", updated_at_ms: nowMs },
+        "locket_gold_since": { value: PAST, updated_at_ms: nowMs },
+        "gold_since": { value: PAST, updated_at_ms: nowMs },
+        "$gold_since": { value: PAST, updated_at_ms: nowMs },
+        "gold_member_since": { value: PAST, updated_at_ms: nowMs }
+      });
 
       $done({
         status: 200,
